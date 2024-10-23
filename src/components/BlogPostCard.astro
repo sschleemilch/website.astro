@@ -1,0 +1,35 @@
+---
+interface Props {
+  post: object;
+  tagFilter?: string | undefined;
+}
+import Tag from "@components/Tag.astro";
+import Button from "@components/Button.astro";
+import page_colors from "@config/page_colors.json";
+
+const { post, tagFilter } = Astro.props;
+const accent = page_colors["Blog"];
+---
+
+<div
+  class="transition-colors flex max-w-xl flex-col justify-between p-4 border-2 border-highlightMed dark:border-highlightMedDark hover:border-highlightHigh dark:hover:border-highlightHighDark"
+>
+  <div class="text-text dark:text-textDark">
+    <div class="text-xs">{post.data.pubDate.toString().slice(0, 15)}</div>
+    <h3 class="mt-3 text-lg font-semibold leading-6 text-text dark:text-textDark">
+      {post.data.title}
+    </h3>
+    <p class="mt-5 line-clamp-3 text-sm leading-6 text-text dark:text-textDark">
+      {post.data.description}
+    </p>
+  </div>
+
+  <div class="text-sm mt-4">
+    <div class="flex flex-wrap gap-x-2">
+      {post.data.tags.map((tag: string) => <Tag value={tag} tagFilter={tagFilter} />)}
+    </div>
+  </div>
+  <div class="self-end mt-4">
+    <Button href={`/posts/${post.slug}/`} color={accent} icon="mdi:arrow-right" iconRight="true">Read</Button>
+  </div>
+</div>

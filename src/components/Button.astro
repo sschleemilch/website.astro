@@ -1,0 +1,24 @@
+---
+import { Icon } from "astro-icon/components";
+interface Props {
+  color: string;
+  icon?: string | undefined;
+  href: string;
+  iconRight?: boolean | undefined;
+}
+
+if (Astro.props.iconRight === undefined) {
+  Astro.props.iconRight = false;
+}
+
+const { color, href, icon, iconRight } = Astro.props;
+---
+
+<a
+  href={href}
+  class=`transition-colors h-10 px-4 py-2 gap-1.5 inline-flex items-center justify-center whitespace-nowrap text-sm border border-${color} dark:border-${color}Dark text-${color} dark:text-${color}Dark hover:bg-${color} dark:hover:bg-${color}Dark hover:text-bg dark:hover:text-bgDark`
+>
+  {icon && !iconRight && <Icon name={icon} class="text-base" />}
+  <slot />
+  {icon && iconRight && <Icon name={icon} class="text-base" />}
+</a>
