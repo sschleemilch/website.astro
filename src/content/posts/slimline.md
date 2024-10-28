@@ -195,8 +195,8 @@ end
 
 return M
 ```
-Probably you got the drill now and there is not much going on here. `:h line` will what `.` and `$` contains but I guess the variable names speak for themselves.
-There is some wild escaping going on for `%2d%%%%` but that is due to the fact that we want to print a `%` and need to escape it for the `string.format()`
+Probably you got the drill now and there is not much going on here. `:h line` will contain the info what `.` and `$` will expand to, but I guess the variable names speak for themselves.
+There is some wild escaping going on for `%2d%%%%`. That is due to the fact that we want to print a `%` and need to escape it for the `string.format()`
 as well as for the statusline string itself.
 
 Let's add it to `M.render()`. However, we would like to use the full width of our line and place the progress on the right side.
