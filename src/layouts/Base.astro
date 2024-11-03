@@ -38,7 +38,7 @@ const { title, accent } = Astro.props;
   document.addEventListener("astro:after-swap", setTheme);
 </script>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -49,7 +49,7 @@ const { title, accent } = Astro.props;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <ViewTransitions />
   </head>
-  <body
+  <body role="main"
     class="max-w-[900px] transition-colors container mx-auto font-body flex flex-col min-h-screen bg-bg dark:bg-bgDark text-text dark:text-textDark"
   >
     <Header accent={accent} />
