@@ -6,7 +6,6 @@ export default {
     extend: {
       fontFamily: {
         body: ["Roboto"],
-        logo: ["'Lobster'"],
       },
       typography: ({ theme }) => ({
         pine: {
@@ -328,7 +327,6 @@ export default {
     "dark:hover:bg-highlightLow",
     "dark:hover:bg-highlightMed",
     "dark:hover:bg-highlightHigh",
-
 
     "border-baseDark",
     "border-surfaceDark",

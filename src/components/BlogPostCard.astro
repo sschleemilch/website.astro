@@ -6,13 +6,14 @@ interface Props {
 import Tag from "@components/Tag.astro";
 import Button from "@components/Button.astro";
 import page_colors from "@config/page_colors.json";
+import { Icon } from "astro-icon/components";
 
 const { post, tagFilter } = Astro.props;
 const accent = page_colors["Blog"];
 ---
 
 <div
-  class="transition-colors flex max-w-xl flex-col justify-between p-4 border-2 border-highlightMed dark:border-highlightMedDark hover:border-highlightHigh dark:hover:border-highlightHighDark"
+  class="transition-colors flex max-w-xl flex-col justify-between p-4 border-2 rounded-lg border-highlightMed dark:border-highlightMedDark hover:border-highlightHigh dark:hover:border-highlightHighDark"
 >
   <div class="text-text dark:text-textDark">
     <div class="text-xs">{post.data.pubDate.toString().slice(0, 15)}</div>
@@ -29,7 +30,9 @@ const accent = page_colors["Blog"];
       {post.data.tags.map((tag: string) => <Tag value={tag} tagFilter={tagFilter} />)}
     </div>
   </div>
-  <div class="self-end mt-4">
-    <Button href={`/posts/${post.slug}/`} color={accent} icon="mdi:arrow-right" iconRight="true">Read</Button>
+
+  <div class="flex justify-between items-center mt-4">
+    <Icon name={post.data.icon} size={32} class="text-muted dark:text-mutedDark" />
+    <Button href={`/posts/${post.id}/`} color={accent} icon="mdi:arrow-right" iconRight="true">Read</Button>
   </div>
 </div>

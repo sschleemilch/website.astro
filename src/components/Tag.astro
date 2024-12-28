@@ -8,6 +8,7 @@ import page_colors from "@config/page_colors.json";
 const accent = page_colors["Tags"];
 
 const { value } = Astro.props;
+
 var color = "subtle";
 
 if (Astro.props.tagFilter != undefined) {
@@ -15,11 +16,9 @@ if (Astro.props.tagFilter != undefined) {
     color = accent;
   }
 }
-
-var textClasses = `text-${color} dark:text-${color}Dark`;
 ---
 
-<a href={`/tags/${value}`} class=`${textClasses} hover:text-text dark:hover:text-textDark`>
+<a href={`/tags/${value}`} class=`text-${color} dark:text-${color}Dark hover:text-text dark:hover:text-textDark`>
   <p>
     #{value}
   </p>
