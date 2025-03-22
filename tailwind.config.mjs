@@ -1,12 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: "selector",
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
-      fontFamily: {
-        body: ["Roboto"],
-      },
       typography: ({ theme }) => ({
         pine: {
           css: {
@@ -45,38 +41,6 @@ export default {
           },
         },
       }),
-      colors: {
-        bgDark: "#232136",
-        surfaceDark: "#2a273f",
-        overlayDark: "#393552",
-        mutedDark: "#6e6a86",
-        subtleDark: "#908caa",
-        textDark: "#e0def4",
-        loveDark: "#eb6f92",
-        goldDark: "#f6c177",
-        roseDark: "#ea9a97",
-        pineDark: "#3e8fb0",
-        foamDark: "#9ccfd8",
-        irisDark: "#c4a7e7",
-        highlightLowDark: "#2a283e",
-        highlightMedDark: "#44415a",
-        highlightHighDark: "#56526e",
-        bg: "#faf4ed",
-        surface: "#fffaf3",
-        overlay: "#f2e9e1",
-        muted: "#9893a5",
-        subtle: "#797593",
-        text: "#575279",
-        love: "#b4637a",
-        gold: "#ea9d34",
-        rose: "#d7827e",
-        pine: "#286983",
-        foam: "#56949f",
-        iris: "#907aa9",
-        highlightLow: "#f4ede8",
-        highlightMed: "#dfdad9",
-        highlightHigh: "#cecacd",
-      },
     },
   },
   safelist: [
@@ -452,5 +416,4 @@ export default {
     "dark:hover:border-highlightMed",
     "dark:hover:border-highlightHigh",
   ],
-  plugins: [require("@tailwindcss/typography")],
 };

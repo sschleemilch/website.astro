@@ -1,6 +1,43 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin '@tailwindcss/typography';
+@config "../../tailwind.config.mjs";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-bgDark: #232136;
+  --color-surfaceDark: #2a273f;
+  --color-overlayDark: #393552;
+  --color-mutedDark: #6e6a86;
+  --color-subtleDark: #908caa;
+  --color-textDark: #e0def4;
+  --color-loveDark: #eb6f92;
+  --color-goldDark: #f6c177;
+  --color-roseDark: #ea9a97;
+  --color-pineDark: #3e8fb0;
+  --color-foamDark: #9ccfd8;
+  --color-irisDark: #c4a7e7;
+  --color-highlightLowDark: #2a283e;
+  --color-highlightMedDark: #44415a;
+  --color-highlightHighDark: #56526e;
+  --color-bg: #faf4ed;
+  --color-surface: #fffaf3;
+  --color-overlay: #f2e9e1;
+  --color-muted: #9893a5;
+  --color-subtle: #797593;
+  --color-text: #575279;
+  --color-love: #b4637a;
+  --color-gold: #ea9d34;
+  --color-rose: #d7827e;
+  --color-pine: #286983;
+  --color-foam: #56949f;
+  --color-iris: #907aa9;
+  --color-highlightLow: #f4ede8;
+  --color-highlightMed: #dfdad9;
+  --color-highlightHigh: #cecacd;
+
+  --font-roboto: Roboto, sans-serif;
+}
 
 html.dark .astro-code,
 html.dark .astro-code span {
