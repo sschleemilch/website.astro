@@ -1,0 +1,21 @@
+---
+import Base from "@layouts/Base.astro";
+import page_colors from "@config/page_colors.json";
+import Section from "@components/Section.astro";
+import H2 from "@components/H2.astro";
+import P from "@components/P.astro";
+
+const title = "Impressum";
+const accent = page_colors[title];
+---
+
+<Base title={title} accent={accent}>
+  <Section>
+    <H2> Hello friend </H2>
+    <P>
+      Welcome to my corner of the internet!<br />
+      I am a passionate Software Researcher exploring the vast landscape of software technologies. This space serves as a
+      blog, showcasing my interests and projects that I believe are worth sharing.
+    </P>
+  </Section>
+</Base>
