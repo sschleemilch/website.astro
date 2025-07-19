@@ -5,21 +5,21 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-bgDark: #232136;
-  --color-surfaceDark: #2a273f;
-  --color-overlayDark: #393552;
+  --color-bgDark: #191724;
+  --color-surfaceDark: #1f1d2e;
+  --color-overlayDark: #26233a;
   --color-mutedDark: #6e6a86;
   --color-subtleDark: #908caa;
   --color-textDark: #e0def4;
   --color-loveDark: #eb6f92;
   --color-goldDark: #f6c177;
-  --color-roseDark: #ea9a97;
-  --color-pineDark: #3e8fb0;
+  --color-roseDark: #ebbcba;
+  --color-pineDark: #31748f;
   --color-foamDark: #9ccfd8;
   --color-irisDark: #c4a7e7;
-  --color-highlightLowDark: #2a283e;
-  --color-highlightMedDark: #44415a;
-  --color-highlightHighDark: #56526e;
+  --color-highlightLowDark: #21202e;
+  --color-highlightMedDark: #403d52;
+  --color-highlightHighDark: #524f67;
   --color-bg: #faf4ed;
   --color-surface: #fffaf3;
   --color-overlay: #f2e9e1;
