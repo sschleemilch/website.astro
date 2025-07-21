@@ -9,9 +9,9 @@ const accent = page_colors[title];
 ---
 
 <Base title={title} accent={accent}>
-  <p class="text-subtle">{frontmatter.pubDate.toString().slice(0, 15)}</p>
-  <slot />
-  <Section>
-    <Button href="/blog" color={accent} icon="mdi:arrow-left">Back to Blog</Button>
-  </Section>
+    <p class="text-subtle">{frontmatter.pubDate.toString().slice(0, 15)}</p>
+    <slot />
+    <Section>
+        <Button href="/blog" color={accent} icon="mdi:arrow-left">Back to Blog</Button>
+    </Section>
 </Base>

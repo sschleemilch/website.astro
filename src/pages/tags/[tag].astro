@@ -11,16 +11,16 @@ const title = "Tags";
 const accent = page_colors[title];
 
 export async function getStaticPaths() {
-  const allPosts = (await getCollection("posts")).sort((a, b) => b.data.pubDate - a.data.pubDate);
-  const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+    const allPosts = (await getCollection("posts")).sort((a, b) => b.data.pubDate - a.data.pubDate);
+    const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 
-  return uniqueTags.map((tag: string) => {
-    const filteredPosts = allPosts.filter((post) => post.data.tags.includes(tag));
-    return {
-      params: { tag },
-      props: { posts: filteredPosts },
-    };
-  });
+    return uniqueTags.map((tag: string) => {
+        const filteredPosts = allPosts.filter((post) => post.data.tags.includes(tag));
+        return {
+            params: { tag },
+            props: { posts: filteredPosts },
+        };
+    });
 }
 
 const { tag } = Astro.params;
@@ -28,15 +28,15 @@ const { posts } = Astro.props;
 ---
 
 <Base title={title} accent={accent}>
-  <H1>
-    <span class=`text-${accent} dark:text-${accent}Dark`>{tag}</span> Posts
-    <span class="text-muted dark:text-mutedDark">({posts.length})</span>
-  </H1>
-  <BlogPosts posts={posts} tagFilter={tag} />
-  <Section>
-    <div class="flex text-center gap-4">
-      <Button href="/blog" color={page_colors["Blog"]} icon="mdi:tag-off">Clear filter</Button>
-      <Button href="/tags" color={page_colors["Tags"]} icon="mdi:tag">Tags</Button>
-    </div>
-  </Section>
+    <H1>
+        <span class=`text-${accent} dark:text-${accent}Dark`>{tag}</span> Posts
+        <span class="text-muted dark:text-mutedDark">({posts.length})</span>
+    </H1>
+    <BlogPosts posts={posts} tagFilter={tag} />
+    <Section>
+        <div class="flex text-center gap-4">
+            <Button href="/blog" color={page_colors["Blog"]} icon="mdi:tag-off">Clear filter</Button>
+            <Button href="/tags" color={page_colors["Tags"]} icon="mdi:tag">Tags</Button>
+        </div>
+    </Section>
 </Base>

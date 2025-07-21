@@ -4,61 +4,63 @@ import { Icon } from "astro-icon/components";
 import Base from "@layouts/Base.astro";
 import Button from "@components/Button.astro";
 import Section from "@components/Section.astro";
-import H2 from "@components/H2.astro";
+import H1 from "@components/H1.astro";
 import P from "@components/P.astro";
-import me from "@img/me.png";
+import me from "@img/me.jpg";
 import page_colors from "@config/page_colors.json";
 const title = "About";
 const accent = page_colors[title];
 
 const icons = [
-  {
-    name: "Email",
-    url: "mailto: contact.sschleemilch@posteo.net",
-    icon: "email",
-    aria: "Email",
-  },
-  {
-    name: "GitHub",
-    url: "https://github.com/sschleemilch",
-    icon: "github",
-  },
-  {
-    name: "LinkedIn",
-    url: "https://de.linkedin.com/in/sschleemilch",
-    icon: "linkedin",
-  },
+    {
+        name: "Email",
+        url: "mailto: contact.sschleemilch@posteo.net",
+        icon: "email",
+        aria: "Email",
+    },
+    {
+        name: "GitHub",
+        url: "https://github.com/sschleemilch",
+        icon: "github",
+    },
+    {
+        name: "LinkedIn",
+        url: "https://de.linkedin.com/in/sschleemilch",
+        icon: "linkedin",
+    },
 ];
 ---
 
 <Base title={title} accent={accent}>
-  <Image src={me} alt="Me" loading="eager" class=`h-48 w-48 mx-auto rounded-full` />
-  <div class="mt-4 flex items-center justify-center text-subtle dark:text-subtleDark">
-    <div class="font-semibold">Sebastian Schleemilch</div>
-  </div>
-  <div class="mt-4 flex text-2xl items-center justify-center gap-4 text-subtle dark:text-subtleDark">
-    {
-      icons.map((item) => (
-        <a href={item.url} aria-label={item.name} class="hover:text-text dark:hover:text-textDark">
-          <Icon name={`mdi:${item.icon}`} />
-        </a>
-      ))
-    }
-  </div>
-
-  <Section>
-    <H2> Hello friend </H2>
-    <P>
-      Welcome to my corner of the internet!<br />
-      I am a passionate Software Researcher exploring the vast landscape of software technologies. This space serves as a
-      blog, showcasing my interests and projects that I believe are worth sharing.
-    </P>
-  </Section>
-
-  <Section>
-    <div class="flex justify-center text-center gap-4">
-      <Button href="/blog" color={page_colors["Blog"]} icon="mdi:text-box-multiple">Blog</Button>
-      <Button href="/tags" color={page_colors["Tags"]} icon="mdi:tag">Tags</Button>
+    <Image
+        src={me}
+        alt="Me"
+        loading="eager"
+        class="h-48 w-48 mx-auto outline-2 outline-offset-4 outline-subtle grayscale-50"
+    />
+    <div class="mt-4 mb-8 flex text-2xl items-center justify-center gap-4 text-subtle dark:text-subtleDark">
+        {
+            icons.map((item) => (
+                <a href={item.url} aria-label={item.name} class="hover:text-text dark:hover:text-textDark">
+                    <Icon name={`mdi:${item.icon}`} />
+                </a>
+            ))
+        }
     </div>
-  </Section>
+
+    <H1> Hello friend </H1>
+    <Section>
+        <P>
+            Welcome to my corner of the internet!<br />
+            I am a passionate Software Researcher exploring the vast landscape of software technologies. This space serves
+            as a blog, showcasing my interests and projects that I believe are worth sharing.
+        </P>
+    </Section>
+
+    <Section>
+        <div class="flex justify-center text-center gap-4">
+            <Button href="/blog" color={page_colors["Blog"]} icon="mdi:text-box-multiple">Blog</Button>
+            <Button href="/tags" color={page_colors["Tags"]} icon="mdi:tag">Tags</Button>
+        </div>
+    </Section>
 </Base>

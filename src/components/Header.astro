@@ -3,25 +3,27 @@ import ThemeSwitch from "@components/ThemeSwitch.astro";
 import { Icon } from "astro-icon/components";
 
 interface Props {
-  accent: string;
+    accent: string;
 }
 
 const { accent } = Astro.props;
 ---
 
 <nav role="navigation">
-  <div class="mb-8 px-4 flex items-center justify-between text-lg py-4 h-16">
-    <div class="pr-6 flex items-center text-2xl text-muted dark:text-mutedDark">
-      <Icon name=`line-md:chevron-left` />
-      <a
-        href="/"
-        aria-label="About"
-        class=`text-3xl text-${accent} dark:text-${accent}Dark hover:text-text dark:hover:text-textDark`
-      >
-        <Icon name=`line-md:beer-twotone-loop` />
-      </a>
-      <Icon name=`line-md:chevron-right` />
+    <div
+        class="mb-8 px-4 flex items-center justify-between text-lg py-4 h-16 border-b-2 border-highlightHigh dark:border-highlightHighDark"
+    >
+        <div class="pr-6 flex items-center text-2xl text-muted dark:text-mutedDark">
+            <Icon name=`line-md:chevron-left` />
+            <a
+                href="/"
+                aria-label="About"
+                class=`text-3xl text-${accent} dark:text-${accent}Dark hover:text-text dark:hover:text-textDark`
+            >
+                <Icon name=`line-md:beer-twotone-loop` />
+            </a>
+            <Icon name=`line-md:chevron-right` />
+        </div>
+        <ThemeSwitch />
     </div>
-    <ThemeSwitch />
-  </div>
 </nav>

@@ -12,24 +12,24 @@ const accent = page_colors[title];
 ---
 
 <Base title={title} accent={accent}>
-  <H1>
-    Tags
-    <span class="text-muted dark:text-mutedDark">({tags.length})</span>
-  </H1>
-  <Section>
-    <div class="flex flex-wrap gap-4">
-      {
-        tags.map((tag) => (
-          <Button href={`/tags/${tag}`} color={accent} icon="mdi:tag">
-            {tag}
-          </Button>
-        ))
-      }
-    </div>
-  </Section>
-  <Section>
-    <div class="flex text-center gap-4">
-      <Button href="/blog" color={page_colors["Blog"]} icon="mdi:tag-off">All Posts</Button>
-    </div>
-  </Section>
+    <H1>
+        Tags
+        <span class="text-muted dark:text-mutedDark">({tags.length})</span>
+    </H1>
+    <Section>
+        <div class="flex flex-wrap gap-4">
+            {
+                tags.map((tag) => (
+                    <Button href={`/tags/${tag}`} color={accent} icon="mdi:tag">
+                        {tag}
+                    </Button>
+                ))
+            }
+        </div>
+    </Section>
+    <Section>
+        <div class="flex text-center gap-4">
+            <Button href="/blog" color={page_colors["Blog"]} icon="mdi:tag-off">All Posts</Button>
+        </div>
+    </Section>
 </Base>

@@ -1,7 +1,7 @@
 ---
 interface Props {
-  value: string;
-  tagFilter?: string | undefined;
+    value: string;
+    tagFilter?: string | undefined;
 }
 
 import page_colors from "@config/page_colors.json";
@@ -12,14 +12,14 @@ const { value } = Astro.props;
 var color = "subtle";
 
 if (Astro.props.tagFilter != undefined) {
-  if (Astro.props.tagFilter == value) {
-    color = accent;
-  }
+    if (Astro.props.tagFilter == value) {
+        color = accent;
+    }
 }
 ---
 
 <a href={`/tags/${value}`} class=`text-${color} dark:text-${color}Dark hover:text-text dark:hover:text-textDark`>
-  <p>
-    #{value}
-  </p>
+    <p>
+        #{value}
+    </p>
 </a>

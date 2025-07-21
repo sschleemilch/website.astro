@@ -2,18 +2,25 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<footer role="contentinfo" class="px-4 text-subtle dark:text-subtleDark dark:border-mutedDark">
-  <div class="mb-16"></div>
-  <div class="items-center grid grid-cols-1 justify-between py-6 md:grid-cols-2">
-    <p class="text-sm/6 max-md:text-center">
-      &copy; 2025 Sebastian Schleemilch. All rights reserved. <a href="/impressum" class="underline">Impressum</a>
-    </p>
-    <div
-      class="flex text-2xl items-center justify-center gap-6 md:justify-end hover:text-text dark:hover:text-textDark"
-    >
-      <a href="https://github.com/sschleemilch/website.astro" aria-label="GitHub">
-        <Icon name="line-md:github-loop" />
-      </a>
+<footer
+    role="contentinfo"
+    class="px-4 text-subtle dark:text-subtleDark border-t-2 border-highlightHigh dark:border-highlightHighDark flex justify-between items-center"
+>
+    <div class="py-2">
+        <p class="text-sm/6 text-left">
+            <a href="/impressum" class="underline">IMPRESSUM</a>
+        </p>
     </div>
-  </div>
+    <div class="py-2 absolute left-1/2 -translate-x-1/2">
+        <p class="text-sm/6 text-center">&copy; 2025 SEBASTIAN SCHLEEMILCH.</p>
+    </div>
+    <div class="py-2 inline-flex text-2xl items-center">
+        <a
+            href="https://github.com/sschleemilch/website.astro"
+            class="hover:text-text dark:hover:text-textDark"
+            aria-label="GitHub"
+        >
+            <Icon name="line-md:github-loop" />
+        </a>
+    </div>
 </footer>
