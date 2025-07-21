@@ -15,7 +15,7 @@ export default defineConfig({
       // See note below for using dual light/dark themes
       themes: {
         light: "rose-pine-dawn",
-        dark: "rose-pine-moon",
+        dark: "rose-pine",
       },
       // Disable the default colors
       // https://shiki.style/guide/dual-themes#without-default-color

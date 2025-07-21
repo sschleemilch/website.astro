@@ -11,7 +11,7 @@ importers:
       '@astrojs/sitemap':
         specifier: ^3.4.1
         version: 3.4.1
-      '@fontsource/roboto':
+      '@fontsource/fira-code':
         specifier: ^5.2.6
         version: 5.2.6
       '@tailwindcss/vite':
@@ -260,8 +260,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fontsource/roboto@5.2.6':
-    resolution: {integrity: sha512-hzarG7yAhMoP418smNgfY4fO7UmuUEm5JUtbxCoCcFHT0hOJB+d/qAEyoNjz7YkPU5OjM2LM8rJnW8hfm0JLaA==}
+  '@fontsource/fira-code@5.2.6':
+    resolution: {integrity: sha512-wCkIpPm0BqlkCPLYeY4Vui96ODmVUV0/GpEe3OfJ4v8EJn/BF2SlyxvarFsTs1CKiGjrO2cXlIZbBrKi9F+hUQ==}
 
   '@iconify-json/line-md@1.2.8':
     resolution: {integrity: sha512-jWFsu6OZ1xAd4U0MLc/dgawC8nCbSn+a+WjTv+luiihpb6rrGLMw+Vy3wQ01hGf77v+fwt8sTvwm6K9zN3r4vQ==}
@@ -2279,7 +2279,7 @@ snapshots:
   '@esbuild/win32-x64@0.25.6':
     optional: true
 
-  '@fontsource/roboto@5.2.6': {}
+  '@fontsource/fira-code@5.2.6': {}
 
   '@iconify-json/line-md@1.2.8':
     dependencies:

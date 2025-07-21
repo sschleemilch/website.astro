@@ -36,7 +36,7 @@
   --color-highlightMed: #dfdad9;
   --color-highlightHigh: #cecacd;
 
-  --font-roboto: Roboto, sans-serif;
+  --font-roboto: FiraCode, monospace;
 }
 
 html.dark .astro-code,
