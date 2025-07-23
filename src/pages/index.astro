@@ -32,24 +32,25 @@ const icons = [
 ---
 
 <Base title={title} accent={accent}>
-    <Image
-        src={me}
-        alt="Me"
-        loading="eager"
-        class="h-48 w-48 mx-auto outline-2 outline-offset-4 outline-subtle grayscale-50"
-    />
-    <div class="mt-4 mb-8 flex text-2xl items-center justify-center gap-4 text-subtle dark:text-subtleDark">
-        {
-            icons.map((item) => (
-                <a href={item.url} aria-label={item.name} class="hover:text-text dark:hover:text-textDark">
-                    <Icon name={`mdi:${item.icon}`} />
-                </a>
-            ))
-        }
+    <div class="flex justify-center">
+        <div
+            class="border-2 flex flex-col items-center shadow-large dark:shadow-largeDark border-highlightHigh dark:border-highlightHighDark"
+        >
+            <Image src={me} alt="Me" loading="eager" class="h-48 w-48 grayscale-50" />
+            <div class="mt-4 mb-4 flex text-2xl items-center justify-center gap-4 text-subtle dark:text-subtleDark">
+                {
+                    icons.map((item) => (
+                        <a href={item.url} aria-label={item.name} class="hover:text-text dark:hover:text-textDark">
+                            <Icon name={`mdi:${item.icon}`} />
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
     </div>
 
-    <H1> Hello friend </H1>
     <Section>
+        <H1> Hello friend </H1>
         <P>
             Welcome to my corner of the internet!<br />
             I am a passionate Software Researcher exploring the vast landscape of software technologies. This space serves
