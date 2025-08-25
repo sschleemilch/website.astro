@@ -17,7 +17,7 @@ const accent = page_colors[title];
         <span class="text-muted dark:text-mutedDark">({tags.length})</span>
     </H1>
     <Section>
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-4 uppercase">
             {
                 tags.map((tag) => (
                     <Button href={`/tags/${tag}`} color={accent} icon="mdi:tag">

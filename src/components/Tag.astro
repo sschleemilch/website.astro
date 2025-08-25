@@ -18,8 +18,9 @@ if (Astro.props.tagFilter != undefined) {
 }
 ---
 
-<a href={`/tags/${value}`} class=`text-${color} dark:text-${color}Dark hover:text-text dark:hover:text-textDark`>
-    <p>
-        #{value}
-    </p>
+<a
+    href={`/tags/${value}`}
+    class=`uppercase text-bg dark:text-bgDark px-2 bg-${color} dark:bg-${color}Dark text-xs font-medium me-2 px-2.5 py-0.5`
+>
+    {value}
 </a>

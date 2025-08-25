@@ -16,7 +16,7 @@ const { color, href, icon, iconRight } = Astro.props;
 
 <a
     href={href}
-    class=`h-10 px-4 py-2 gap-1.5 inline-flex items-center justify-center whitespace-nowrap text-sm border-2 border-${color} dark:border-${color}Dark text-${color} dark:text-${color}Dark hover:text-bg dark:hover:text-bgDark hover:bg-${color} dark:hover:bg-${color}Dark`
+    class=`h-10 px-5 py-2.5 gap-1.5 inline-flex items-center justify-center whitespace-nowrap text-sm font-medium bg-${color} dark:bg-${color}Dark text-bg dark:text-bgDark hover:opacity-75`
 >
     {icon && !iconRight && <Icon name={icon} class="text-base" />}
     <slot />
