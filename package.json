@@ -11,20 +11,20 @@
     "format": "prettier . --write"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.4.1",
-    "@fontsource/fira-code": "^5.2.6",
-    "@tailwindcss/vite": "^4.1.11",
-    "astro": "^5.12.0",
+    "@astrojs/sitemap": "^3.6.0",
+    "@fontsource/fira-code": "^5.2.7",
+    "@tailwindcss/vite": "^4.1.14",
+    "astro": "^5.14.4",
     "astro-icon": "^1.1.5",
     "sharp": "^0.33.5",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.14"
   },
   "devDependencies": {
-    "@iconify-json/line-md": "^1.2.8",
+    "@iconify-json/line-md": "^1.2.11",
     "@iconify-json/mdi": "^1.2.3",
-    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/typography": "^0.5.19",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   }
 }
