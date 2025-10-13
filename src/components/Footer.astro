@@ -2,22 +2,15 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<footer
-    role="contentinfo"
-    class="px-4 py-4 text-subtle dark:text-subtleDark border-t-2 border-highlightHigh dark:border-highlightHighDark flex justify-between items-center"
->
+<footer role="contentinfo" class="px-4 py-4 h-14 border-t dark:border-white/10 flex justify-between items-center">
     <p class="text-sm/6 text-left">
-        <a href="/impressum" class="underline hover:text-text dark:hover:text-textDark">LEGAL NOTICE</a>
+        <a href="/impressum" class="underline">LEGAL NOTICE</a>
     </p>
     <div class="absolute left-1/2 -translate-x-1/2">
         <p class="text-sm/6 text-center">&copy; 2025 SEBASTIAN SCHLEEMILCH.</p>
     </div>
     <div class="inline-flex text-2xl items-center">
-        <a
-            href="https://github.com/sschleemilch/website.astro"
-            class="hover:text-text dark:hover:text-textDark"
-            aria-label="GitHub"
-        >
+        <a href="https://github.com/sschleemilch/website.astro" class="" aria-label="GitHub">
             <Icon name="line-md:github-loop" />
         </a>
     </div>

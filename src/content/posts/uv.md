@@ -2,9 +2,8 @@
 title: Python UV
 pubDate: 2024-12-28
 tags:
-  - Python
+  - PYTHON
 description: Why I switched from poetry to uv for all my projects
-icon: python
 ---
 
 # The reasons I switched from [poetry](https://python-poetry.org/) to [uv](https://docs.astral.sh/uv/)

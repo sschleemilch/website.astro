@@ -2,10 +2,9 @@
 title: How to write a custom neovim statusline
 pubDate: 2024-10-15
 tags:
-  - Neovim
-  - Lua
+  - NEOVIM
+  - LUA
 description: This is how I wrote a custom neovim statusline and turned it into a plugin
-icon: neovim
 ---
 
 # How to write a custom neovim statusline

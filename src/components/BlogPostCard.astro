@@ -11,7 +11,7 @@ const { post, tagFilter } = Astro.props;
 const accent = page_colors["Blog"];
 ---
 
-<div class="flex max-w-xl flex-col justify-between p-4 border-2 border-highlightHigh dark:border-highlightHighDark">
+<div class="flex max-w-xl flex-col justify-between p-4 border border-highlightHigh dark:border-highlightHighDark">
     <div class="text-text dark:text-textDark">
         <div class="text-xs">{post.data.pubDate.toString().slice(0, 15)}</div>
         <h3 class="mt-3 text-lg font-semibold leading-6 text-text dark:text-textDark">

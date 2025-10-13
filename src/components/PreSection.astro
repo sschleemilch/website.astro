@@ -1,0 +1,20 @@
+---
+const { items } = Astro.props;
+---
+
+<div
+    class:list={[
+        "flex",
+        "h-16",
+        "items-end",
+        "px-2",
+        "font-mono",
+        "text-xs/6",
+        "whitespace-pre",
+        "max-sm:px-4",
+        "sm:h-24",
+        "dark:text-white/25",
+    ]}
+>
+    {items.map((item) => <span>{item}&nbsp;</span>)}
+</div>

@@ -2,10 +2,9 @@
 title: Building a website with Astro
 pubDate: 2024-12-27
 tags:
-  - Astro
-  - Web
+  - ASTRO
+  - WEB
 description: My experience building this website using Astro
-icon: astro
 ---
 
 # My experience building this website using Astro

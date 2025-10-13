@@ -1,6 +1,7 @@
 ---
 import Base from "./Base.astro";
 import Section from "@components/Section.astro";
+import PreSection from "@components/PreSection.astro";
 import Button from "@components/Button.astro";
 import page_colors from "@config/page_colors.json";
 const { frontmatter } = Astro.props;
@@ -9,9 +10,13 @@ const accent = page_colors[title];
 ---
 
 <Base title={title} accent={accent}>
-    <p class="text-subtle">{frontmatter.pubDate.toString().slice(0, 15)}</p>
-    <slot />
-    <Section>
+    <div>
+        <PreSection items={frontmatter.tags} />
+        <Section accent={accent} title={frontmatter.pubDate.toString().slice(0, 15)}>
+            <slot />
+        </Section>
+    </div>
+    <Section accent="" title="">
         <Button href="/blog" color={accent} icon="mdi:arrow-left">Back to Blog</Button>
     </Section>
 </Base>

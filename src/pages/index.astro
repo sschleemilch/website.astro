@@ -4,6 +4,7 @@ import { Icon } from "astro-icon/components";
 import Base from "@layouts/Base.astro";
 import Button from "@components/Button.astro";
 import Section from "@components/Section.astro";
+import PreSection from "@components/PreSection.astro";
 import H1 from "@components/H1.astro";
 import P from "@components/P.astro";
 import me from "@img/me.jpg";
@@ -32,34 +33,35 @@ const icons = [
 ---
 
 <Base title={title} accent={accent}>
-    <div class="flex justify-center">
-        <div class="border-2 flex flex-col items-center border-highlightHigh dark:border-highlightHighDark mb-16">
-            <Image src={me} alt="Me" loading="eager" class="h-48 w-48 grayscale-50" />
-            <div class="mt-4 mb-4 flex text-2xl items-center justify-center gap-4 text-subtle dark:text-subtleDark">
-                {
-                    icons.map((item) => (
-                        <a href={item.url} aria-label={item.name} class="hover:text-text dark:hover:text-textDark">
-                            <Icon name={`mdi:${item.icon}`} />
-                        </a>
-                    ))
-                }
+    <div>
+        <PreSection items={["PORTFOLIO", "BLOG"]} />
+        <Section title="About" accent={accent}>
+            <div class="flex justify-center">
+                <div class="flex flex-col items-center dark:bg-white/10">
+                    <Image src={me} alt="Me" loading="eager" class="max-w-48 grayscale-50" />
+                    <div class="mt-4 mb-4 flex text-2xl items-center justify-center gap-4">
+                        {
+                            icons.map((item) => (
+                                <a
+                                    href={item.url}
+                                    aria-label={item.name}
+                                    class="hover:text-text dark:hover:text-textDark"
+                                >
+                                    <Icon name={`mdi:${item.icon}`} />
+                                </a>
+                            ))
+                        }
+                    </div>
+                </div>
+                <H1> Hello friend</H1>
+                <P>
+                    Welcome to my corner of the internet!<br />
+                    I am a passionate Software Researcher exploring the vast landscape of software technologies. This space
+                    serves as a blog, showcasing my interests and projects that I believe are worth sharing.
+                </P>
             </div>
-        </div>
+        </Section>
+        <Button href="/blog" color={page_colors["Blog"]} icon="mdi:text-box-multiple">Blog</Button>
+        <Button href="/tags" color={page_colors["Tags"]} icon="mdi:tag">Tags</Button>
     </div>
-
-    <H1> Hello friend</H1>
-    <Section>
-        <P>
-            Welcome to my corner of the internet!<br />
-            I am a passionate Software Researcher exploring the vast landscape of software technologies. This space serves
-            as a blog, showcasing my interests and projects that I believe are worth sharing.
-        </P>
-    </Section>
-
-    <Section>
-        <div class="flex justify-center text-center gap-4">
-            <Button href="/blog" color={page_colors["Blog"]} icon="mdi:text-box-multiple">Blog</Button>
-            <Button href="/tags" color={page_colors["Tags"]} icon="mdi:tag">Tags</Button>
-        </div>
-    </Section>
 </Base>
