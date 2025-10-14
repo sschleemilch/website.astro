@@ -1,5 +1,5 @@
 ---
-title: Building a website with Astro
+title: Astro
 pubDate: 2024-12-27
 tags:
   - ASTRO

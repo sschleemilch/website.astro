@@ -4,8 +4,6 @@ import { Icon } from "astro-icon/components";
 import Base from "@layouts/Base.astro";
 import Button from "@components/Button.astro";
 import Section from "@components/Section.astro";
-import PreSection from "@components/PreSection.astro";
-import H1 from "@components/H1.astro";
 import P from "@components/P.astro";
 import me from "@img/me.jpg";
 import page_colors from "@config/page_colors.json";
@@ -34,8 +32,7 @@ const icons = [
 
 <Base title={title} accent={accent}>
     <div>
-        <PreSection items={["PORTFOLIO", "BLOG"]} />
-        <Section title="About" accent={accent}>
+        <Section accent={accent} meta="Sebastian Schleemilch" title="Hello, friend" details={["PORTFOLIO", "BLOG"]}>
             <div class="flex justify-center">
                 <div class="flex flex-col items-center dark:bg-white/10">
                     <Image src={me} alt="Me" loading="eager" class="max-w-48 grayscale-50" />
@@ -53,7 +50,6 @@ const icons = [
                         }
                     </div>
                 </div>
-                <H1> Hello friend</H1>
                 <P>
                     Welcome to my corner of the internet!<br />
                     I am a passionate Software Researcher exploring the vast landscape of software technologies. This space

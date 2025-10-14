@@ -2,7 +2,6 @@
 import Base from "@layouts/Base.astro";
 import page_colors from "@config/page_colors.json";
 import Section from "@components/Section.astro";
-import PreSection from "@components/PreSection.astro";
 import H1 from "@components/H1.astro";
 import P from "@components/P.astro";
 
@@ -12,8 +11,7 @@ const accent = page_colors[title];
 
 <Base title={title} accent={accent}>
     <div>
-        <PreSection items={[]} />
-        <Section title="" , accent="">
+        <Section>
             <div class="p-4">
                 <H1> Legal notice</H1>
                 <P>Information in accordance with § 5 DDG</P>
