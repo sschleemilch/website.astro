@@ -1,12 +1,12 @@
 ---
 import Base from "@layouts/Base.astro";
-import page_colors from "@config/page_colors.json";
+import accents from "@config/accents.json";
 import H1 from "@components/H1.astro";
 import Lines from "@components/Lines.astro";
 import P from "@components/P.astro";
 
 const title = "Impressum";
-const accent = page_colors[title];
+const accent = accents[title];
 ---
 
 <Base title={title} accent={accent}>

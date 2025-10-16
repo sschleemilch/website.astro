@@ -5,10 +5,10 @@ interface Props {
 }
 import Tag from "@components/Tag.astro";
 import Button from "@components/Button.astro";
-import page_colors from "@config/page_colors.json";
+import accents from "@config/accents.json";
 
 const { post, tagFilter } = Astro.props;
-const accent = page_colors["Blog"];
+const accent = accents["Blog"];
 ---
 
 <div class="flex max-w-xl flex-col justify-between p-4 border border-highlightHigh dark:border-highlightHighDark">

@@ -276,7 +276,7 @@ A cool feature that helps building a configurable site is the ability to import 
 I wanted to have the colors I use for each page configurable so that each page as a different accent.
 The different accent is reflected e.g. in the Logo.
 
-For that, I created a `src/config/page_colors.json`:
+For that, I created a `src/config/accents.json`:
 
 ```json
 {
@@ -289,8 +289,8 @@ For that, I created a `src/config/page_colors.json`:
 The config file can be imported and used like this in `*.astro` files:
 
 ```javascript
-import page_colors from "@config/page_colors.json";
-const accent = page_colors["About"];
+import accents from "@config/accents.json";
+const accent = accents["About"];
 ```
 
 From there, it can be passed to components that in turn use it to build tailwind classes like `text-${accent}` and `dark:text-${accent}Dark`.

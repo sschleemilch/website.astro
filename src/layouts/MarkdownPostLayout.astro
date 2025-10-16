@@ -4,10 +4,10 @@ import Lines from "@components/Lines.astro";
 import Details from "@components/Details.astro";
 import Sidenote from "@components/Sidenote.astro";
 import H1 from "@components/H1.astro";
-import page_colors from "@config/page_colors.json";
+import accents from "@config/accents.json";
 const { frontmatter } = Astro.props;
 const title = "Blog";
-const accent = page_colors[title];
+const accent = accents[title];
 ---
 
 <Base title={title} accent={accent}>

@@ -6,9 +6,9 @@ import Button from "@components/Button.astro";
 import H1 from "@components/H1.astro";
 import Lines from "@components/Lines.astro";
 
-import page_colors from "@config/page_colors.json";
+import accents from "@config/accents.json";
 const title = "Tags";
-const accent = page_colors[title];
+const accent = accents[title];
 
 export async function getStaticPaths() {
     const allPosts = (await getCollection("posts")).sort((a, b) => b.data.pubDate - a.data.pubDate);
@@ -35,8 +35,8 @@ const { posts } = Astro.props;
     <BlogPosts posts={posts} tagFilter={tag} />
     <Lines>
         <div class="flex text-center gap-4">
-            <Button href="/blog" color={page_colors["Blog"]} icon="mdi:tag-off">Clear filter</Button>
-            <Button href="/tags" color={page_colors["Tags"]} icon="mdi:tag">Tags</Button>
+            <Button href="/blog" color={accents["Blog"]} icon="mdi:tag-off">Clear filter</Button>
+            <Button href="/tags" color={accents["Tags"]} icon="mdi:tag">Tags</Button>
         </div>
     </Lines>
 </Base>

@@ -5,10 +5,10 @@ import BlogPosts from "@components/BlogPosts.astro";
 import Button from "@components/Button.astro";
 import Lines from "@components/Lines.astro";
 import H1 from "@components/H1.astro";
-import page_colors from "@config/page_colors.json";
+import accents from "@config/accents.json";
 const posts = (await getCollection("posts")).sort((a, b) => b.data.pubDate - a.data.pubDate);
 const title = "Blog";
-const accent = page_colors[title];
+const accent = accents[title];
 ---
 
 <Base title={title} accent={accent}>
@@ -19,7 +19,7 @@ const accent = page_colors[title];
     <BlogPosts posts={posts} />
     <Lines>
         <div class="flex text-center gap-4">
-            <Button href="/tags" color={page_colors["Tags"]} icon="mdi:tag">Tags</Button>
+            <Button href="/tags" color={accents["Tags"]} icon="mdi:tag">Tags</Button>
         </div>
     </Lines>
 </Base>
