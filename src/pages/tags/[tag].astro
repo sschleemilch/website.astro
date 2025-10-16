@@ -2,9 +2,10 @@
 import { getCollection } from "astro:content";
 import Base from "@layouts/Base.astro";
 import BlogPosts from "@components/BlogPosts.astro";
-import Button from "@components/Button.astro";
 import H1 from "@components/H1.astro";
 import Lines from "@components/Lines.astro";
+import Sidenote from "@components/Sidenote.astro";
+import Details from "@components/Details.astro";
 
 import accents from "@config/accents.json";
 const title = "Tags";
@@ -28,15 +29,12 @@ const { posts } = Astro.props;
 ---
 
 <Base title={title} accent={accent}>
-    <H1>
-        <span class=`text-${accent} dark:text-${accent}Dark`>{tag}</span> Posts
-        <span class="text-muted dark:text-mutedDark">({posts.length})</span>
-    </H1>
-    <BlogPosts posts={posts} tagFilter={tag} />
     <Lines>
-        <div class="flex text-center gap-4">
-            <Button href="/blog" color={accents["Blog"]} icon="mdi:tag-off">Clear filter</Button>
-            <Button href="/tags" color={accents["Tags"]} icon="mdi:tag">Tags</Button>
-        </div>
+        <Details>len(posts)=={posts.length}</Details>
+        <Sidenote accent={accent}>{tag} BLOG POSTS</Sidenote>
+        <Lines>
+            <H1> Blog </H1>
+        </Lines>
+        <BlogPosts posts={posts} accent={accent} />
     </Lines>
 </Base>

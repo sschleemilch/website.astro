@@ -1,14 +1,44 @@
 ---
+import Lines from "@components/Lines.astro";
 interface Props {
     posts: object;
-    tagFilter?: string | undefined;
+    accent:  string;
 }
-import BlogPostCard from "@components/BlogPostCard.astro";
-const { posts, tagFilter } = Astro.props;
+const { posts, accent } = Astro.props;
 ---
 
-<div
-    class="mx-auto mt-10 grid max-w-2xl gap-x-8 gap-y-16 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none grid-cols-1 lg:grid-cols-3"
->
-    {posts.map((post) => <BlogPostCard post={post} tagFilter={tagFilter} />)}
+<div class="mt-12 mb-46 grid grid-cols-1 lg:grid-cols-[24rem_2.5rem_minmax(0,1fr)]">
+    {
+    posts.map((post, index) => (
+        <>
+            <Lines add={["p", "col-span-3", "grid", "grid-cols-subgrid", "divide-x", "dark:divide-white/10"]}>
+                <div class="px-2 font-mono text-sm/6 font-medium tracking-widest text-gray-500 uppercase max-lg:hidden">
+                    {post.data.pubDate.toString().slice(0, 15)}
+                </div>
+                <div class="max-lg:hidden"></div>
+                <div class="text-md px-2">
+                    <div class="max-w-(--container-2xl)">
+                        <div class="mb-4 font-mono text-sm/6 font-medium tracking-widest text-gray-500 uppercase lg:hidden">
+                            {post.data.pubDate.toString().slice(0, 15)}
+                        </div>
+                        <a class="font-semibold" href=`/posts/${post.id}/`>{post.data.title}</a>
+                        <div class="mt-4 line-clamp-3 leading-7 dark:text-gray-400">
+                            {post.data.description}
+                        </div>
+                        <a class:list={["mt-4","inline-block","text-sm","font-semibold",`dark:text-${accent}`, "dark:hover:text-gray-300"]} href=`/posts/${post.id}/`>
+                            Read more
+                        </a>
+                    </div>
+                </div>
+            </Lines>
+            {index < posts.length - 1 && (
+                <div class="contents divide-x dark:divide-white/10">
+                    <div class="h-16 max-lg:hidden"></div>
+                    <div class="h-16 max-lg:hidden"></div>
+                    <div class="h-16"></div>
+                </div>
+            )}
+            </>
+        ))
+    }
 </div>
