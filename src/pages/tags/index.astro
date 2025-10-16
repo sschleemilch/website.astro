@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Base from "@layouts/Base.astro";
 import Lines from "@components/Lines.astro";
 import Details from "@components/Details.astro";
+import Button from "@components/Button.astro";
 import Sidenote from "@components/Sidenote.astro";
 import H1 from "@components/H1.astro";
 const allPosts = await getCollection("posts");
@@ -19,7 +20,12 @@ const accent = accents[title];
         <Lines>
             <H1>{title}</H1>
         </Lines>
-        <div class="relative isolate mt-16">
+        <Lines add={["mt-10"]}>
+            <div class="mx-2">
+                <Button href="/blog">Show all</Button>
+            </div>
+        </Lines>
+        <div class="relative isolate mt-12">
             <div
                 class="pointer-events-none absolute inset-0 z-10 grid grid-cols-2 gap-10 max-md:gap-5 lg:grid-cols-3 xl:grid-cols-4"
             >
