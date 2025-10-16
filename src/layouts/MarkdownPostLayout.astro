@@ -8,22 +8,22 @@ import Button from "@components/Button.astro";
 import accents from "@config/accents.json";
 const { frontmatter } = Astro.props;
 
-const title = "Blog";
+const title = "Post";
 const accent = accents[title];
 ---
 
 <Base title={title} accent={accent}>
-  <Lines>
-    <Details>TAGS [{frontmatter.tags.join(", ")}]</Details>
-    <Sidenote accent={accent}>{frontmatter.pubDate.toString().slice(0, 15)}</Sidenote>
     <Lines>
-      <H1>{frontmatter.title}</H1>
+        <Details>TAGS [{frontmatter.tags.join(", ")}]</Details>
+        <Sidenote accent={accent}>{frontmatter.pubDate.toString().slice(0, 15)}</Sidenote>
+        <Lines>
+            <H1>{frontmatter.title}</H1>
+        </Lines>
+        <slot />
     </Lines>
-    <slot />
-  </Lines>
-  <Lines>
-    <div class="mx-2">
-      <Button href="/blog">Back to Blog</Button>
-    </div>
-  </Lines>
+    <Lines>
+        <div class="mx-2">
+            <Button href="/blog">Back to Blog</Button>
+        </div>
+    </Lines>
 </Base>
