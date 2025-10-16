@@ -3,6 +3,7 @@ import Base from "@layouts/Base.astro";
 import accents from "@config/accents.json";
 import H1 from "@components/H1.astro";
 import Lines from "@components/Lines.astro";
+import Details from "@components/Details.astro";
 import P from "@components/P.astro";
 
 const title = "Impressum";
@@ -55,12 +56,14 @@ const accent = accents[title];
                 content control of the linked pages, however, is not reasonable without concrete evidence of a legal infringement.
                 Upon becoming aware of legal infringements, we will remove such links immediately.
             </P><br />
-            Created with the <a href="https://impressum-generator.de" rel="dofollow">Impressum-Generator</a> by WebsiteWissen.com,
-            the guide for <a href="https://websitewissen.com/website-erstellen" rel="dofollow">website creation</a>, <a
-                href="https://websitewissen.com/homepage-baukasten-vergleich"
-                rel="dofollow">homepage builders</a
-            > and <a href="https://websitewissen.com/shopsysteme-vergleich" rel="dofollow">shop systems</a>. Legal text
-            by <a href="https://www.kanzlei-hasselbach.de/" rel="dofollow">Kanzlei Hasselbach</a>.
+            <P>
+                Created with the <a href="https://impressum-generator.de" rel="dofollow">Impressum-Generator</a> by WebsiteWissen.com,
+                the guide for <a href="https://websitewissen.com/website-erstellen" rel="dofollow">website creation</a>, <a
+                    href="https://websitewissen.com/homepage-baukasten-vergleich"
+                    rel="dofollow">homepage builders</a
+                > and <a href="https://websitewissen.com/shopsysteme-vergleich" rel="dofollow">shop systems</a>. Legal
+                text by <a href="https://www.kanzlei-hasselbach.de/" rel="dofollow">Kanzlei Hasselbach</a>.
+            </P>
         </div>
     </Lines>
 </Base>
