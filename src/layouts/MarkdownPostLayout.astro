@@ -1,7 +1,9 @@
 ---
 import Base from "./Base.astro";
-import Section from "@components/Section.astro";
-import Button from "@components/Button.astro";
+import Lines from "@components/Lines.astro";
+import Details from "@components/Details.astro";
+import Sidenote from "@components/Sidenote.astro";
+import H1 from "@components/H1.astro";
 import page_colors from "@config/page_colors.json";
 const { frontmatter } = Astro.props;
 const title = "Blog";
@@ -9,15 +11,12 @@ const accent = page_colors[title];
 ---
 
 <Base title={title} accent={accent}>
-    <div>
-        <Section
-            accent={accent}
-            title={frontmatter.title}
-            meta={frontmatter.pubDate.toString().slice(0, 15)}
-            details={frontmatter.tags}
-        >
-            <slot />
-        </Section>
-        <Button href="/blog" color={accent} icon="mdi:arrow-left">Back to Blog</Button>
-    </div>
+    <Lines>
+        <Details>{frontmatter.tags.join("::")}</Details>
+        <Sidenote accent={accent}>{frontmatter.pubDate.toString().slice(0, 15)}</Sidenote>
+        <Lines>
+            <H1>{frontmatter.title}</H1>
+        </Lines>
+        <slot />
+    </Lines>
 </Base>

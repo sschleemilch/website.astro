@@ -1,15 +1,20 @@
 ---
+import { Icon } from "astro-icon/components";
 interface Props {
-    accent: string;
+    color: string;
+    icon?: string | undefined;
     href: string;
+    iconRight?: boolean | undefined;
 }
 
-const { accent, href } = Astro.props;
+const { color, href, icon, iconRight = false } = Astro.props;
 ---
 
 <a
     href={href}
-    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+    class="inline-flex items-center justify-center gap-2 rounded-4xl bg-black px-4 py-2 text-sm/6 font-semibold text-white dark:bg-gray-700 dark:hover:bg-gray-600"
 >
+    {icon && !iconRight && <Icon name={icon} class="text-base" />}
     <slot />
+    {icon && iconRight && <Icon name={icon} class="text-base" />}
 </a>
