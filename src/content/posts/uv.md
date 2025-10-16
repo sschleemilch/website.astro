@@ -1,5 +1,5 @@
 ---
-title: Python UV
+title: Python uv
 pubDate: 2024-12-28
 tags:
   - PYTHON

@@ -5,10 +5,12 @@ import BlogPosts from "@components/BlogPosts.astro";
 import Lines from "@components/Lines.astro";
 import H1 from "@components/H1.astro";
 import Sidenote from "@components/Sidenote.astro";
-import Button from "@components/Button.astro";
 import Details from "@components/Details.astro";
+
 import accents from "@config/accents.json";
-const posts = (await getCollection("posts")).sort((a, b) => b.data.pubDate - a.data.pubDate);
+
+const posts = (await getCollection("posts")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
 const title = "Blog";
 const accent = accents[title];
 ---
@@ -19,11 +21,6 @@ const accent = accents[title];
         <Sidenote accent={accent}>ALL BLOG POSTS</Sidenote>
         <Lines>
             <H1> Blog </H1>
-        </Lines>
-        <Lines add={["mt-10"]}>
-            <div class="mx-2">
-                <Button href="/tags">Filter by tag</Button>
-            </div>
         </Lines>
         <BlogPosts posts={posts} accent={accent} />
     </Lines>

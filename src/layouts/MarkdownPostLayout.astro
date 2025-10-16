@@ -4,19 +4,26 @@ import Lines from "@components/Lines.astro";
 import Details from "@components/Details.astro";
 import Sidenote from "@components/Sidenote.astro";
 import H1 from "@components/H1.astro";
+import Button from "@components/Button.astro";
 import accents from "@config/accents.json";
 const { frontmatter } = Astro.props;
+
 const title = "Blog";
 const accent = accents[title];
 ---
 
 <Base title={title} accent={accent}>
     <Lines>
-        <Details>{frontmatter.tags.join("::")}</Details>
+        <Details>TAGS [{frontmatter.tags.join(", ")}]</Details>
         <Sidenote accent={accent}>{frontmatter.pubDate.toString().slice(0, 15)}</Sidenote>
         <Lines>
             <H1>{frontmatter.title}</H1>
         </Lines>
         <slot />
+    </Lines>
+    <Lines>
+        <div class="mx-2">
+            <Button href="/blog">Back to Blog</Button>
+        </div>
     </Lines>
 </Base>

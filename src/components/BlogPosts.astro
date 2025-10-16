@@ -1,7 +1,8 @@
 ---
 import Lines from "@components/Lines.astro";
+import type { CollectionEntry } from "astro:content";
 interface Props {
-    posts: object;
+    posts: CollectionEntry<"posts">[];
     accent:  string;
 }
 const { posts, accent } = Astro.props;
@@ -21,11 +22,11 @@ const { posts, accent } = Astro.props;
                         <div class="mb-4 font-mono text-sm/6 font-medium tracking-widest text-gray-500 uppercase lg:hidden">
                             {post.data.pubDate.toString().slice(0, 15)}
                         </div>
-                        <a class="font-semibold" href=`/posts/${post.id}/`>{post.data.title}</a>
+                        <a class="font-semibold" href=`/blog/posts/${post.id}/`>{post.data.title}</a>
                         <div class="mt-4 line-clamp-3 leading-7 dark:text-gray-400">
                             {post.data.description}
                         </div>
-                        <a class:list={["mt-4","inline-block","text-sm","font-semibold",`dark:text-${accent}`, "dark:hover:text-gray-300"]} href=`/posts/${post.id}/`>
+                        <a class:list={["mt-4","inline-block","text-sm","font-semibold",`dark:text-${accent}`, "dark:hover:text-gray-300"]} href=`/blog/posts/${post.id}/`>
                             Read more
                         </a>
                     </div>

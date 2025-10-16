@@ -12,7 +12,7 @@ interface Props {
 
 const { title, accent } = Astro.props;
 
-const icons = [
+const socials = [
     {
         name: "Email",
         url: "mailto: contact.sschleemilch@posteo.net",
@@ -105,7 +105,7 @@ const icons = [
                                 <div class="flex flex-col items-center">
                                     <div class="mt-4 mb-4 flex text-2xl items-center justify-center gap-4">
                                         {
-                                            icons.map((item) => (
+                                            socials.map((item) => (
                                                 <a
                                                     href={item.url}
                                                     aria-label={item.name}
