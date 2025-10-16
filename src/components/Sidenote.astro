@@ -2,36 +2,36 @@
 import Lines from "@components/Lines.astro";
 
 interface Props {
-    accent?: string;
+  accent?: string;
 }
 
 const { accent = "red-400" } = Astro.props;
 ---
 
 <Lines before={false} add={["2xl:after:hidden"]}>
-    <p
-        class:list={[
-            "-left-[var(--gutter-width)]",
-            "2xl:-rotate-90",
-            "2xl:-translate-x-full",
-            "2xl:-translate-y-full",
-            "2xl:absolute",
-            "2xl:text-right",
-            "font-mono",
-            "font-semibold",
-            "max-2xl:mb-4",
-            "max-2xl:px-2",
-            "max-sm:px-4",
-            "origin-bottom-right",
-            "sm:text-xs",
-            "text-left",
-            "text-sm",
-            "top-0",
-            "tracking-widest",
-            "uppercase",
-            `dark:text-${accent}`,
-        ]}
-    >
-        <slot />
-    </p>
+  <p
+    class:list={[
+      "-left-[var(--gutter-width)]",
+      "2xl:-rotate-90",
+      "2xl:-translate-x-full",
+      "2xl:-translate-y-full",
+      "2xl:absolute",
+      "2xl:text-right",
+      "font-mono",
+      "font-semibold",
+      "max-2xl:mb-4",
+      "max-2xl:px-2",
+      "max-sm:px-4",
+      "origin-bottom-right",
+      "sm:text-xs",
+      "text-left",
+      "text-sm",
+      "top-0",
+      "tracking-widest",
+      "uppercase",
+      `dark:text-${accent}`,
+    ]}
+  >
+    <slot />
+  </p>
 </Lines>

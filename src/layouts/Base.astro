@@ -6,129 +6,123 @@ import { Icon } from "astro-icon/components";
 import { ClientRouter } from "astro:transitions";
 
 interface Props {
-    title: string;
-    accent: string;
+  title: string;
+  accent: string;
 }
 
 const { title, accent } = Astro.props;
 
 const socials = [
-    {
-        name: "Email",
-        url: "mailto: contact.sschleemilch@posteo.net",
-        icon: "email",
-        aria: "Email",
-    },
-    {
-        name: "GitHub",
-        url: "https://github.com/sschleemilch",
-        icon: "github",
-    },
-    {
-        name: "LinkedIn",
-        url: "https://de.linkedin.com/in/sschleemilch",
-        icon: "linkedin",
-    },
+  {
+    name: "Email",
+    url: "mailto: contact.sschleemilch@posteo.net",
+    icon: "email",
+    aria: "Email",
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/sschleemilch",
+    icon: "github",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://de.linkedin.com/in/sschleemilch",
+    icon: "linkedin",
+  },
 ];
 ---
 
 <html lang="en" class="dark dark:bg-gray-950 dark:text-gray-300 overflow-y-scroll">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <meta name="title" content={`Schleemilch | ${title}`} />
-        <meta name="description" content="Schleemilch | Tech | Portfolio | Blog" />
-        <title>Schleemilch | {title}</title>
-        <link rel="icon" type="image/svg" href="/favicon.svg" />
-        <link rel="sitemap" href="/sitemap-index.xml" />
-        <ClientRouter />
-    </head>
-    <body>
-        <div class="isolate">
-            <div class="max-w-screen overflow-x-hidden">
-                <Header accent={accent} />
-                <div
-                    class:list={[
-                        "[--gutter-width:2.5rem]",
-                        "grid",
-                        "grid-cols-1",
-                        "grid-rows-[1fr_1px_auto_1px_auto]",
-                        "justify-center",
-                        "lg:mx-0",
-                        "md:-mx-4",
-                        "md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)]",
-                        "min-h-dvh",
-                        "pt-14.25",
-                    ]}
-                >
-                    <div
-                        class:list={[
-                            "bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)]",
-                            "bg-[size:10px_10px]",
-                            "bg-fixed",
-                            "border-x",
-                            "border-x-(--pattern-fg)",
-                            "col-start-1",
-                            "dark:[--pattern-fg:var(--color-white)]/10",
-                            "hidden",
-                            "md:block",
-                            "row-span-full",
-                            "row-start-1",
-                        ]}
-                    >
-                    </div>
-                    <div class="grid gap-24 py-24 sm:gap-40 dark:text-white">
-                        <slot />
-                    </div>
-                    <div
-                        class:list={[
-                            "bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)]",
-                            "bg-[size:10px_10px]",
-                            "bg-fixed",
-                            "border-x",
-                            "border-x-(--pattern-fg)",
-                            "col-start-1",
-                            "dark:[--pattern-fg:var(--color-white)]/10",
-                            "hidden",
-                            "md:block",
-                            "md:col-start-3",
-                            "row-span-full",
-                            "row-start-1",
-                        ]}
-                    >
-                    </div>
-                    <div class="col-start-1 row-start-5 grid md:col-start-2">
-                        <div class="px-2 pb-24">
-                            <div
-                                class="mx-auto flex w-full flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8 px-4 md:px-6 lg:px-8"
-                            >
-                                <div class="flex flex-col items-center">
-                                    <div class="mt-4 mb-4 flex text-2xl items-center justify-center gap-4">
-                                        {
-                                            socials.map((item) => (
-                                                <a
-                                                    href={item.url}
-                                                    aria-label={item.name}
-                                                    class="dark:hover:text-gray-100 dark:text-gray-400"
-                                                >
-                                                    <Icon name={`mdi:${item.icon}`} />
-                                                </a>
-                                            ))
-                                        }
-                                    </div>
-                                </div>
-                                <div
-                                    class="flex flex-col gap-4 text-sm/6 text-gray-700 sm:flex-row sm:gap-2 sm:pr-4 dark:text-gray-400"
-                                >
-                                    <span>&copy; 2025 SEBASTIAN SCHLEEMILCH</span>
-                                    <span class="max-sm:hidden">·</span>
-                                    <a href="/impressum" class="underline">LEGAL NOTICE</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="title" content={`Schleemilch | ${title}`} />
+    <meta name="description" content="Schleemilch | Tech | Portfolio | Blog" />
+    <title>Schleemilch | {title}</title>
+    <link rel="icon" type="image/svg" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <ClientRouter />
+  </head>
+  <body>
+    <div class="isolate">
+      <div class="max-w-screen overflow-x-hidden">
+        <Header accent={accent} />
+        <div
+          class:list={[
+            "[--gutter-width:2.5rem]",
+            "grid",
+            "grid-cols-1",
+            "grid-rows-[1fr_1px_auto_1px_auto]",
+            "justify-center",
+            "lg:mx-0",
+            "md:-mx-4",
+            "md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)]",
+            "min-h-dvh",
+            "pt-14.25",
+          ]}
+        >
+          <div
+            class:list={[
+              "bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)]",
+              "bg-[size:10px_10px]",
+              "bg-fixed",
+              "border-x",
+              "border-x-(--pattern-fg)",
+              "col-start-1",
+              "dark:[--pattern-fg:var(--color-white)]/10",
+              "hidden",
+              "md:block",
+              "row-span-full",
+              "row-start-1",
+            ]}
+          >
+          </div>
+          <div class="grid gap-24 py-24 sm:gap-40 dark:text-white">
+            <slot />
+          </div>
+          <div
+            class:list={[
+              "bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)]",
+              "bg-[size:10px_10px]",
+              "bg-fixed",
+              "border-x",
+              "border-x-(--pattern-fg)",
+              "col-start-1",
+              "dark:[--pattern-fg:var(--color-white)]/10",
+              "hidden",
+              "md:block",
+              "md:col-start-3",
+              "row-span-full",
+              "row-start-1",
+            ]}
+          >
+          </div>
+          <div class="col-start-1 row-start-5 grid md:col-start-2">
+            <div class="px-2 pb-24">
+              <div
+                class="mx-auto flex w-full flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8 px-4 md:px-6 lg:px-8"
+              >
+                <div class="flex flex-col items-center">
+                  <div class="mt-4 mb-4 flex text-2xl items-center justify-center gap-4">
+                    {
+                      socials.map((item) => (
+                        <a href={item.url} aria-label={item.name} class="dark:hover:text-gray-100 dark:text-gray-400">
+                          <Icon name={`mdi:${item.icon}`} />
+                        </a>
+                      ))
+                    }
+                  </div>
                 </div>
+                <div class="flex flex-col gap-4 text-sm/6 sm:flex-row sm:gap-2 sm:pr-4 dark:text-gray-400">
+                  <span>&copy; 2025 SEBASTIAN SCHLEEMILCH</span>
+                  <span class="max-sm:hidden">·</span>
+                  <a href="/impressum" class="underline">LEGAL NOTICE</a>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </body>
+      </div>
+    </div>
+  </body>
 </html>

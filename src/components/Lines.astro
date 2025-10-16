@@ -1,8 +1,8 @@
 ---
 interface Props {
-    after?: boolean;
-    before?: boolean;
-    add?: string[];
+  after?: boolean;
+  before?: boolean;
+  add?: string[];
 }
 
 const { after = true, before = true, add = [] } = Astro.props;
@@ -10,27 +10,27 @@ const { after = true, before = true, add = [] } = Astro.props;
 let classes = ["relative"].concat(add);
 
 if (after) {
-    classes = classes.concat([
-        "after:-left-[100vw]",
-        "after:absolute",
-        "after:bottom-0",
-        "after:h-px",
-        "after:w-[200vw]",
-        "dark:after:bg-white/10",
-    ]);
+  classes = classes.concat([
+    "after:-left-[100vw]",
+    "after:absolute",
+    "after:bottom-0",
+    "after:h-px",
+    "after:w-[200vw]",
+    "dark:after:bg-white/10",
+  ]);
 }
 if (before) {
-    classes = classes.concat([
-        "before:-left-[100vw]",
-        "before:absolute",
-        "before:top-0",
-        "before:h-px",
-        "before:w-[200vw]",
-        "dark:before:bg-white/10",
-    ]);
+  classes = classes.concat([
+    "before:-left-[100vw]",
+    "before:absolute",
+    "before:top-0",
+    "before:h-px",
+    "before:w-[200vw]",
+    "dark:before:bg-white/10",
+  ]);
 }
 ---
 
 <div class:list={classes}>
-    <slot />
+  <slot />
 </div>

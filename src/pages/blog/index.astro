@@ -16,12 +16,12 @@ const accent = accents[title];
 ---
 
 <Base title={title} accent={accent}>
+  <Lines>
+    <Details>len(posts)=={posts.length}</Details>
+    <Sidenote accent={accent}>ALL BLOG POSTS</Sidenote>
     <Lines>
-        <Details>len(posts)=={posts.length}</Details>
-        <Sidenote accent={accent}>ALL BLOG POSTS</Sidenote>
-        <Lines>
-            <H1> Blog </H1>
-        </Lines>
-        <BlogPosts posts={posts} accent={accent} />
+      <H1> Blog </H1>
     </Lines>
+    <BlogPosts posts={posts} accent={accent} />
+  </Lines>
 </Base>

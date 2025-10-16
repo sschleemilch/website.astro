@@ -11,52 +11,24 @@ import accents from "@config/accents.json";
 import Sidenote from "@components/Sidenote.astro";
 const title = "About";
 const accent = accents[title];
-
-const icons = [
-    {
-        name: "Email",
-        url: "mailto: contact.sschleemilch@posteo.net",
-        icon: "email",
-        aria: "Email",
-    },
-    {
-        name: "GitHub",
-        url: "https://github.com/sschleemilch",
-        icon: "github",
-    },
-    {
-        name: "LinkedIn",
-        url: "https://de.linkedin.com/in/sschleemilch",
-        icon: "linkedin",
-    },
-];
 ---
 
 <Base title={title} accent={accent}>
+  <Lines>
+    <Details>portfolio::blog</Details>
+    <Sidenote accent={accent}>SEBASTIAN SCHLEEMILCH</Sidenote>
     <Lines>
-        <Details>portfolio::blog</Details>
-        <Sidenote accent={accent}>SEBASTIAN SCHLEEMILCH</Sidenote>
-        <Lines>
-            <H1>Welcome</H1>
-        </Lines>
-        <div class="flex justify-center">
-            <div class="flex flex-col items-center dark:bg-white/10">
-                <Image src={me} alt="Me" loading="eager" class="max-w-48 grayscale-50" />
-                <div class="mt-4 mb-4 flex text-2xl items-center justify-center gap-4">
-                    {
-                        icons.map((item) => (
-                            <a href={item.url} aria-label={item.name} class="hover:text-text dark:hover:text-textDark">
-                                <Icon name={`mdi:${item.icon}`} />
-                            </a>
-                        ))
-                    }
-                </div>
-            </div>
-            <P>
-                Welcome to my corner of the internet!<br />
-                I am a passionate Software Researcher exploring the vast landscape of software technologies. This space serves
-                as a blog, showcasing my interests and projects that I believe are worth sharing.
-            </P>
-        </div>
+      <H1>Welcome</H1>
     </Lines>
+    <div class="flex justify-center">
+      <div class="flex flex-col items-center dark:bg-white/10">
+        <Image src={me} alt="Me" loading="eager" class="max-w-48 grayscale-50" />
+      </div>
+      <P>
+        Welcome to my corner of the internet!<br />
+        I am a passionate Software Researcher exploring the vast landscape of software technologies. This space serves as
+        a blog, showcasing my interests and projects that I believe are worth sharing.
+      </P>
+    </div>
+  </Lines>
 </Base>
