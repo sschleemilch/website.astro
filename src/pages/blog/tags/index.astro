@@ -9,6 +9,10 @@ import H1 from "@components/H1.astro";
 
 const posts = await getCollection("posts");
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
+const tagCounts = tags.reduce((acc, tag) => {
+    acc[tag] = posts.filter((post) => post.data.tags.includes(tag)).length;
+    return acc;
+}, {});
 
 import accents from "@config/accents.json";
 const title = "Tags";
@@ -53,7 +57,9 @@ const accent = accents[title];
                                 "dark:hover:bg-white/2.5",
                             ]}
                         >
-                            {tag}
+                            <div class="flex gap-2">
+                                {tag} <span class="dark:text-white/25">[{tagCounts[tag]}]</span>
+                            </div>
                         </a>
                     ))
                 }
