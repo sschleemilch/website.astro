@@ -14,21 +14,31 @@ const accent = accents[title];
 ---
 
 <Base title={title} accent={accent}>
-  <Lines>
-    <Details>portfolio::blog</Details>
-    <Sidenote accent={accent}>SEBASTIAN SCHLEEMILCH</Sidenote>
     <Lines>
-      <H1>Welcome</H1>
+        <Details>portfolio::blog</Details>
+        <Sidenote accent={accent}>SEBASTIAN SCHLEEMILCH</Sidenote>
+        <Lines>
+            <H1>Welcome</H1>
+        </Lines>
+        <Lines add={["mt-12"]}>
+            <div class="grid w-full grid-flow-dense grid-cols-2 gap-2 bg-gray-950/5 p-2 dark:bg-white/10">
+                <div
+                    class="h-116 isolate flex flex-col gap-2 overflow-hidden rounded-2xl p-2 outline dark:bg-gray-950 dark:outline-white/10 col-span-full md:col-span-1"
+                >
+                    <div class="grid size-full place-content-center">
+                        <Image src={me} alt="Me" loading="eager" class="size-82 rounded-2xl" />
+                    </div>
+                </div>
+                <div
+                    class="isolate flex flex-col gap-2 overflow-hidden rounded-2xl p-2 outline dark:bg-gray-950 dark:outline-white/10 col-span-full md:col-span-1"
+                >
+                    <P>
+                        Welcome to my corner of the internet!<br />
+                        I am a passionate Software Researcher exploring the vast landscape of software technologies. This
+                        space serves as a blog, showcasing my interests and projects that I believe are worth sharing.
+                    </P>
+                </div>
+            </div>
+        </Lines>
     </Lines>
-    <div class="flex justify-center">
-      <div class="flex flex-col items-center dark:bg-white/10">
-        <Image src={me} alt="Me" loading="eager" class="max-w-48 grayscale-50" />
-      </div>
-      <P>
-        Welcome to my corner of the internet!<br />
-        I am a passionate Software Researcher exploring the vast landscape of software technologies. This space serves as
-        a blog, showcasing my interests and projects that I believe are worth sharing.
-      </P>
-    </div>
-  </Lines>
 </Base>
