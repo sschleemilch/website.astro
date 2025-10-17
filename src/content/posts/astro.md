@@ -1,10 +1,11 @@
 ---
-title: Astro
+title: Astro.build for a blog
 pubDate: 2024-12-27
 tags:
   - ASTRO
   - WEB
-description: My experience building this website using Astro
+description: I show my experience using Astro for the website you are reading.
+  Component based web design made for static sites and blogs! Perfect.
 ---
 
 # My experience building this website using Astro

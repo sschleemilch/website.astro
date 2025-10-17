@@ -3,7 +3,9 @@ title: Python uv
 pubDate: 2024-12-28
 tags:
   - PYTHON
-description: Why I switched from poetry to uv for all my projects
+description: "After the great success of ruff, astral made another gem: uv.
+  I describe my personal reasons why I made the switch from poetry and the features
+  I enjoy from uv."
 ---
 
 # The reasons I switched from [poetry](https://python-poetry.org/) to [uv](https://docs.astral.sh/uv/)
