@@ -1,34 +1,63 @@
 ---
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 import Base from "@layouts/Base.astro";
 import Lines from "@components/Lines.astro";
 import Details from "@components/Details.astro";
 import P from "@components/P.astro";
 import H1 from "@components/H1.astro";
+import H2 from "@components/H2.astro";
 import me from "@img/me.jpg";
 import accents from "@config/accents.json";
 import Sidenote from "@components/Sidenote.astro";
+
 const title = "About";
 const accent = accents[title];
+
+function calculateAge(birthDate: Date): number {
+    const today = new Date();
+    const birthYear = birthDate.getFullYear();
+    const currentYear = today.getFullYear();
+
+    let age = currentYear - birthYear;
+
+    const birthMonth = birthDate.getMonth();
+    const currentMonth = today.getMonth();
+    const birthDay = birthDate.getDate();
+    const currentDay = today.getDate();
+
+    if (currentMonth < birthMonth || (currentMonth === birthMonth && currentDay < birthDay)) {
+        age--;
+    }
+
+    return age;
+}
+
+const age = calculateAge(new Date("1989-09-04"));
 ---
 
 <Base title={title} accent={accent}>
-  <Lines>
-    <Details>portfolio::blog</Details>
-    <Sidenote accent={accent}>SEBASTIAN SCHLEEMILCH</Sidenote>
     <Lines>
-      <H1>Welcome</H1>
+        <Lines before={false}>
+            <H1>Hello, friend</H1>
+        </Lines>
+
+        <Lines add={["mt-12"]}>
+            <H2> Welcome to my corner! </H2>
+        </Lines>
+
+        <Details add={["mt-12"]}>portfolio::blog</Details>
+        <Lines>
+            <P add={["max-w-(--breakpoint-md)", "px-2"]}>
+                I am a passionate software enthusiast exploring the vast landscape of software and everything around.
+                This space serves as a blog, showcasing my interests and projects that I believe are worth sharing.
+                Enjoy your stay.
+            </P>
+        </Lines>
+
+        <Details add={["mt-12"]}>age: {age}, Residency: Munich</Details>
+        <Lines>
+            <Sidenote accent={accent}>Sebastian Schleemilch</Sidenote>
+            <Image src={me} alt="Me" loading="eager" class="size-60" />
+        </Lines>
     </Lines>
-    <div class="flex justify-center">
-      <div class="flex flex-col items-center dark:bg-white/10">
-        <Image src={me} alt="Me" loading="eager" class="max-w-48 grayscale-50" />
-      </div>
-      <P>
-        Welcome to my corner of the internet!<br />
-        I am a passionate Software Researcher exploring the vast landscape of software technologies. This space serves as
-        a blog, showcasing my interests and projects that I believe are worth sharing.
-      </P>
-    </div>
-  </Lines>
 </Base>
