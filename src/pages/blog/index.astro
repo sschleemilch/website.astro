@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 import BlogPosts from "@components/BlogPosts.astro";
 import Lines from "@components/Lines.astro";
 import H1 from "@components/H1.astro";
-import Sidenote from "@components/Sidenote.astro";
+import Subtitle from "@components/Subtitle.astro";
 import Button from "@components/Button.astro";
 import Details from "@components/Details.astro";
 
@@ -19,7 +19,7 @@ const accent = accents[title];
 <Base title={title} accent={accent}>
     <Lines>
         <Details>len(posts)=={posts.length}</Details>
-        <Sidenote accent={accent}>ALL BLOG POSTS</Sidenote>
+        <Subtitle accent={accent}>ALL BLOG POSTS</Subtitle>
         <Lines>
             <H1> Blog </H1>
         </Lines>

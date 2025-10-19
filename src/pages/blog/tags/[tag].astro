@@ -4,7 +4,7 @@ import Base from "@layouts/Base.astro";
 import BlogPosts from "@components/BlogPosts.astro";
 import H1 from "@components/H1.astro";
 import Lines from "@components/Lines.astro";
-import Sidenote from "@components/Sidenote.astro";
+import Subtitle from "@components/Subtitle.astro";
 import Details from "@components/Details.astro";
 import Button from "@components/Button.astro";
 
@@ -32,7 +32,7 @@ const { posts } = Astro.props;
 <Base title={title} accent={accent}>
     <Lines>
         <Details>len(posts)=={posts.length}</Details>
-        <Sidenote accent={accent}>{tag} BLOG POSTS</Sidenote>
+        <Subtitle accent={accent}>{tag} BLOG POSTS</Subtitle>
         <Lines>
             <H1> Blog </H1>
         </Lines>

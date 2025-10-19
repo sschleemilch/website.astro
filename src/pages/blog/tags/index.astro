@@ -4,7 +4,7 @@ import Base from "@layouts/Base.astro";
 import Lines from "@components/Lines.astro";
 import Details from "@components/Details.astro";
 import Button from "@components/Button.astro";
-import Sidenote from "@components/Sidenote.astro";
+import Subtitle from "@components/Subtitle.astro";
 import H1 from "@components/H1.astro";
 
 const posts = await getCollection("posts");
@@ -22,7 +22,7 @@ const accent = accents[title];
 <Base title={title} accent={accent}>
     <Lines>
         <Details>len(tags)=={tags.length}</Details>
-        <Sidenote accent={accent}>filter posts by tag</Sidenote>
+        <Subtitle accent={accent}>filter posts by tag</Subtitle>
         <Lines>
             <H1>{title}</H1>
         </Lines>

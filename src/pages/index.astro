@@ -8,7 +8,7 @@ import H1 from "@components/H1.astro";
 import H2 from "@components/H2.astro";
 import me from "@img/me.jpg";
 import accents from "@config/accents.json";
-import Sidenote from "@components/Sidenote.astro";
+import Subtitle from "@components/Subtitle.astro";
 
 const title = "About";
 const accent = accents[title];
@@ -56,7 +56,7 @@ const age = calculateAge(new Date("1989-09-04"));
 
         <Details add={["mt-12"]}>age: {age}, Residency: Munich</Details>
         <Lines>
-            <Sidenote accent={accent}>Sebastian Schleemilch</Sidenote>
+            <Subtitle accent={accent}>Sebastian Schleemilch</Subtitle>
             <Image src={me} alt="Me" loading="eager" class="size-60" />
         </Lines>
     </Lines>
