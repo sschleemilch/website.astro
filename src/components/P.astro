@@ -1,3 +1,13 @@
-<p class="leading-7 [&:not(:first-child)]:mt-6 dark:text-gray-400">
-  <slot />
+---
+interface Props {
+    add?: string[];
+}
+
+const { add = [] } = Astro.props;
+
+let classes = ["leading-7", "[&:not(:first-child)]:mt-6", "dark:text-gray-400"].concat(add);
+---
+
+<p class:list={classes}>
+    <slot />
 </p>
