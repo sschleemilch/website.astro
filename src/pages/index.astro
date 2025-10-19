@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import Base from "@layouts/Base.astro";
 import Lines from "@components/Lines.astro";
-import Details from "@components/Details.astro";
+import Prelude from "@components/Prelude.astro";
 import P from "@components/P.astro";
 import H1 from "@components/H1.astro";
 import H2 from "@components/H2.astro";
@@ -45,7 +45,7 @@ const age = calculateAge(new Date("1989-09-04"));
             <H2> Welcome to my corner! </H2>
         </Lines>
 
-        <Details add={["mt-12"]}>portfolio::blog</Details>
+        <Prelude add={["mt-12"]}>portfolio::blog</Prelude>
         <Lines>
             <P add={["max-w-(--breakpoint-md)", "px-2"]}>
                 I am a passionate software enthusiast exploring the vast landscape of software and everything around.
@@ -54,7 +54,7 @@ const age = calculateAge(new Date("1989-09-04"));
             </P>
         </Lines>
 
-        <Details add={["mt-12"]}>age: {age}, Residency: Munich</Details>
+        <Prelude add={["mt-12"]}>age: {age}, Residency: Munich</Prelude>
         <Lines>
             <Subtitle accent={accent}>Sebastian Schleemilch</Subtitle>
             <Image src={me} alt="Me" loading="eager" class="size-60" />
