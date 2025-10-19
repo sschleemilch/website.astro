@@ -17,17 +17,17 @@ const accent = accents[title];
 ---
 
 <Base title={title} accent={accent}>
+  <Lines>
+    <Prelude>len(posts)=={posts.length}</Prelude>
+    <Subtitle accent={accent}>ALL BLOG POSTS</Subtitle>
     <Lines>
-        <Prelude>len(posts)=={posts.length}</Prelude>
-        <Subtitle accent={accent}>ALL BLOG POSTS</Subtitle>
-        <Lines>
-            <H1> Blog </H1>
-        </Lines>
-        <Lines add={["mt-10"]}>
-            <div class="mx-2">
-                <Button href="/blog/tags">Filter by tag</Button>
-            </div>
-        </Lines>
-        <BlogPosts posts={posts} accent={accent} />
+      <H1> Blog </H1>
     </Lines>
+    <Lines add={["mt-10"]}>
+      <div class="mx-2">
+        <Button href="/blog/tags">Filter by tag</Button>
+      </div>
+    </Lines>
+    <BlogPosts posts={posts} accent={accent} />
+  </Lines>
 </Base>

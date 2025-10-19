@@ -10,8 +10,8 @@ import H1 from "@components/H1.astro";
 const posts = await getCollection("posts");
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 const tagCounts = tags.reduce((acc, tag) => {
-    acc[tag] = posts.filter((post) => post.data.tags.includes(tag)).length;
-    return acc;
+  acc[tag] = posts.filter((post) => post.data.tags.includes(tag)).length;
+  return acc;
 }, {});
 
 import accents from "@config/accents.json";
@@ -20,50 +20,50 @@ const accent = accents[title];
 ---
 
 <Base title={title} accent={accent}>
+  <Lines>
+    <Prelude>len(tags)=={tags.length}</Prelude>
+    <Subtitle accent={accent}>filter posts by tag</Subtitle>
     <Lines>
-        <Prelude>len(tags)=={tags.length}</Prelude>
-        <Subtitle accent={accent}>filter posts by tag</Subtitle>
-        <Lines>
-            <H1>{title}</H1>
-        </Lines>
-        <Lines add={["mt-10"]}>
-            <div class="mx-2">
-                <Button href="/blog">Show all</Button>
-            </div>
-        </Lines>
-        <div class="relative isolate mt-12">
-            <div
-                class="pointer-events-none absolute inset-0 z-10 grid grid-cols-2 gap-10 max-md:gap-5 lg:grid-cols-3 xl:grid-cols-4"
-            >
-                <div class="border-r dark:border-white/10"></div>
-                <div class="border-l lg:border-x dark:border-white/10"></div>
-                <div class="border-l max-lg:hidden xl:border-x dark:border-white/10"></div>
-                <div class="border-l max-xl:hidden dark:border-white/10"></div>
-            </div>
-            <ul class="grid grid-cols-2 gap-5 md:gap-10 lg:grid-cols-3 xl:grid-cols-4">
-                {
-                    tags.map((tag) => (
-                        <a
-                            href={`/blog/tags/${tag}`}
-                            class:list={[
-                                "grid",
-                                "place-content-center",
-                                "transition-colors",
-                                "max-lg:nth-[2n+1]:line-y",
-                                "sm:px-2",
-                                "sm:py-4",
-                                "lg:max-xl:nth-[3n+1]:line-y",
-                                "xl:nth-[4n+1]:line-y",
-                                "dark:hover:bg-white/2.5",
-                            ]}
-                        >
-                            <div class="flex gap-2">
-                                {tag} <span class="dark:text-white/25">[{tagCounts[tag]}]</span>
-                            </div>
-                        </a>
-                    ))
-                }
-            </ul>
-        </div>
+      <H1>{title}</H1>
     </Lines>
+    <Lines add={["mt-10"]}>
+      <div class="mx-2">
+        <Button href="/blog">Show all</Button>
+      </div>
+    </Lines>
+    <div class="relative isolate mt-12">
+      <div
+        class="pointer-events-none absolute inset-0 z-10 grid grid-cols-2 gap-10 max-md:gap-5 lg:grid-cols-3 xl:grid-cols-4"
+      >
+        <div class="border-r dark:border-white/10"></div>
+        <div class="border-l lg:border-x dark:border-white/10"></div>
+        <div class="border-l max-lg:hidden xl:border-x dark:border-white/10"></div>
+        <div class="border-l max-xl:hidden dark:border-white/10"></div>
+      </div>
+      <ul class="grid grid-cols-2 gap-5 md:gap-10 lg:grid-cols-3 xl:grid-cols-4">
+        {
+          tags.map((tag) => (
+            <a
+              href={`/blog/tags/${tag}`}
+              class:list={[
+                "grid",
+                "place-content-center",
+                "transition-colors",
+                "max-lg:nth-[2n+1]:line-y",
+                "sm:px-2",
+                "sm:py-4",
+                "lg:max-xl:nth-[3n+1]:line-y",
+                "xl:nth-[4n+1]:line-y",
+                "dark:hover:bg-white/2.5",
+              ]}
+            >
+              <div class="flex gap-2">
+                {tag} <span class="dark:text-muted">[{tagCounts[tag]}]</span>
+              </div>
+            </a>
+          ))
+        }
+      </ul>
+    </div>
+  </Lines>
 </Base>

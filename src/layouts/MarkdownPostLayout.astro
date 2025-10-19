@@ -13,17 +13,17 @@ const accent = accents[title];
 ---
 
 <Base title={title} accent={accent}>
+  <Lines>
+    <Prelude>TAGS [{frontmatter.tags.join(", ")}]</Prelude>
+    <Subtitle accent={accent}>{frontmatter.pubDate.toString().slice(0, 15)}</Subtitle>
     <Lines>
-        <Prelude>TAGS [{frontmatter.tags.join(", ")}]</Prelude>
-        <Subtitle accent={accent}>{frontmatter.pubDate.toString().slice(0, 15)}</Subtitle>
-        <Lines>
-            <H1>{frontmatter.title}</H1>
-        </Lines>
-        <slot />
+      <H1>{frontmatter.title}</H1>
     </Lines>
-    <Lines>
-        <div class="mx-2">
-            <Button href="/blog">Back to Blog</Button>
-        </div>
-    </Lines>
+    <slot />
+  </Lines>
+  <Lines>
+    <div class="mx-2">
+      <Button href="/blog">Back to Blog</Button>
+    </div>
+  </Lines>
 </Base>

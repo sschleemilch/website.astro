@@ -13,16 +13,16 @@ const title = "Tags";
 const accent = accents[title];
 
 export async function getStaticPaths() {
-    const allPosts = (await getCollection("posts")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-    const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+  const allPosts = (await getCollection("posts")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 
-    return uniqueTags.map((tag: string) => {
-        const filteredPosts = allPosts.filter((post) => post.data.tags.includes(tag));
-        return {
-            params: { tag },
-            props: { posts: filteredPosts },
-        };
-    });
+  return uniqueTags.map((tag: string) => {
+    const filteredPosts = allPosts.filter((post) => post.data.tags.includes(tag));
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
 }
 
 const { tag } = Astro.params;
@@ -30,20 +30,20 @@ const { posts } = Astro.props;
 ---
 
 <Base title={title} accent={accent}>
+  <Lines>
+    <Prelude>len(posts)=={posts.length}</Prelude>
+    <Subtitle accent={accent}>{tag} BLOG POSTS</Subtitle>
     <Lines>
-        <Prelude>len(posts)=={posts.length}</Prelude>
-        <Subtitle accent={accent}>{tag} BLOG POSTS</Subtitle>
-        <Lines>
-            <H1> Blog </H1>
-        </Lines>
-        <Lines add={["mt-10"]}>
-            <div class="mx-2">
-                <div class="flex flex-nowrap gap-4">
-                    <Button href="/blog/tags">Filter by tag</Button>
-                    <Button href="/blog">Show all</Button>
-                </div>
-            </div>
-        </Lines>
-        <BlogPosts posts={posts} accent={accent} />
+      <H1> Blog </H1>
     </Lines>
+    <Lines add={["mt-10"]}>
+      <div class="mx-2">
+        <div class="flex flex-nowrap gap-4">
+          <Button href="/blog/tags">Filter by tag</Button>
+          <Button href="/blog">Show all</Button>
+        </div>
+      </div>
+    </Lines>
+    <BlogPosts posts={posts} accent={accent} />
+  </Lines>
 </Base>

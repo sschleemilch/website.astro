@@ -1,13 +1,13 @@
 ---
 interface Props {
-    add?: string[];
+  add?: string[];
 }
 
 const { add = [] } = Astro.props;
 
-let classes = ["leading-7", "[&:not(:first-child)]:mt-6", "dark:text-gray-400"].concat(add);
+let classes = ["leading-7", "[&:not(:first-child)]:mt-6", "dark:text-subtle"].concat(add);
 ---
 
 <p class:list={classes}>
-    <slot />
+  <slot />
 </p>
