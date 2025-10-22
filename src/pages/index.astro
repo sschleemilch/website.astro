@@ -55,7 +55,9 @@ const age = calculateAge(new Date("1989-09-04"));
 
     <Prelude add={["mt-12"]}>age: {age}, Residency: Munich</Prelude>
     <Lines>
-      <Subtitle accent={accent}>Sebastian Schleemilch</Subtitle>
+      <Lines before={false} add={["2xl:after:hidden"]}>
+        <Subtitle accent={accent}>Sebastian Schleemilch</Subtitle>
+      </Lines>
       <div class="px-2">
         <Image src={me} alt="Me" loading="eager" class="size-60" />
       </div>
