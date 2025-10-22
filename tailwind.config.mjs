@@ -43,12 +43,5 @@ export default {
       },
     },
   },
-  safelist: [
-    "dark:text-sky-500",
-    "dark:text-emerald-500",
-    "dark:text-red-400",
-    "dark:text-fuchsia-500",
-    "dark:text-rose-400",
-    "dark:text-amber-400",
-  ],
+  safelist: ["dark:text-foam", "dark:text-gold", "dark:text-iris", "dark:text-text"],
 };
