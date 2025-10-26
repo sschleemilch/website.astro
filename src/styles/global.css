@@ -6,6 +6,7 @@
 
 @theme {
   --font-sans: Inter, sans-serif;
+  --font-mono: "Fira Code", monospace;
 }
 
 html.dark .astro-code,

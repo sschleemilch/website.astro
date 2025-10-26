@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Base from "@layouts/Base.astro";
 import Lines from "@components/Lines.astro";
 import Prelude from "@components/Prelude.astro";
+import Button from "@components/Button.astro";
 import P from "@components/P.astro";
 import H1 from "@components/H1.astro";
 import H2 from "@components/H2.astro";
@@ -60,6 +61,11 @@ const age = calculateAge(new Date("1989-09-04"));
       </Lines>
       <div class="px-2">
         <Image src={me} alt="Me" loading="eager" class="size-60" />
+      </div>
+    </Lines>
+    <Lines add={["mt-8"]}>
+      <div class="mx-2">
+        <Button href="/blog">Blog</Button>
       </div>
     </Lines>
   </Lines>
