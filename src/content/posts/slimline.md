@@ -3,7 +3,6 @@ title: Neovim statusline plugin
 pubDate: 2024-10-15
 tags:
   - NEOVIM
-  - LUA
 description: I will demonstrate how to write a Neovim statusline plugin from scratch.
   Components we will add are the mode, the progress in the file as well as the path and filename of
   the currently open buffer
