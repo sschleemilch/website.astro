@@ -3,7 +3,6 @@ import Base from "./Base.astro";
 import Lines from "@components/Lines.astro";
 import Prelude from "@components/Prelude.astro";
 import Subtitle from "@components/Subtitle.astro";
-import H1 from "@components/H1.astro";
 import Button from "@components/Button.astro";
 import accents from "@config/accents.json";
 const { frontmatter } = Astro.props;
@@ -16,10 +15,9 @@ const accent = accents[title];
   <Lines>
     <Prelude>TAGS [{frontmatter.tags.join(", ")}]</Prelude>
     <Subtitle accent={accent}>{frontmatter.pubDate.toString().slice(0, 15)}</Subtitle>
-    <Lines>
-      <H1>{frontmatter.title}</H1>
+    <Lines after={false}>
+      <slot />
     </Lines>
-    <slot />
   </Lines>
   <Lines>
     <div class="mx-4">
