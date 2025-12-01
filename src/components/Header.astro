@@ -17,10 +17,37 @@ const { accent } = Astro.props;
         href="/"
         aria-label="About"
         class:list={[`dark:text-${accent}`, "dark:hover:text-text", "italic", "font-bold"]}
+        id="logo"
       >
         schleemilch&nbsp;
       </a>
-      <span class="text-subtle">_</span>
+      <span class="text-subtle" id="cursor">_</span>
     </div>
   </div>
 </div>
+
+<script>
+  const sleep = (time: number) => new Promise((resolve) => setTimeout(resolve, time));
+
+  const logo = document.querySelector("#logo");
+  const cursor = document.querySelector("#cursor");
+  const text = "schleemilch";
+
+  async function write() {
+    for (let character of text) {
+      logo.innerHTML += character;
+      await sleep(50);
+    }
+    logo.innerHTML += "&nbsp;";
+  }
+
+  async function animate() {
+    cursor.classList.add("blink");
+    logo.innerHTML = "";
+    await sleep(2000);
+    cursor.classList.remove("blink");
+    write();
+  }
+
+  animate();
+</script>
