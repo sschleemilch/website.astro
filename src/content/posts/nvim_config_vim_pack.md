@@ -11,14 +11,11 @@ description: "Writing a minimal Neovim configuration from scratch
 
 I have tried quite some different things since I have been starting to use Neovim full-time.
 From full-blown distros like [lazyvim](https://www.lazyvim.org/) to starter templates like [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
-
 However, recently I felt the urge to have a very minimal setup with exactly what I want and need.
-
 Also, I wanted to reduce the overall number of plugins.
 
 I was happy to see that Neovim ships with a minimal plugin manager: `vim.pack` ([pull/34009](https://github.com/neovim/neovim/pull/34009)).
 Before that, I was happily using [lazy.nvim](https://github.com/folke/lazy.nvim) which I never had any problems with.
-
 And yet it motivated me of removing one more plugin.
 
 **As the time of writing, `vim.pack` requires the nightly version of Neovim and is not included in a stable release yet**
@@ -61,7 +58,6 @@ end
 `vim.pack.add()` accepts a table of `vim.pack.Spec` entries to be fetched and installed.
 Additionally to the spec, I wanted to be able to call a `setup()` function of the plugins after they have been loaded.
 Therefore, I annotated a custom type `Plugin`, which extends the `vim.pack.Spec` by an optional `setup()` function.
-
 As we see in the annotation, `require('plugins')` returns a list of plugins.
 
 One of the core things I liked about [lazy.nvim](https://github.com/folke/lazy.nvim) is to have a file for each plugin.
@@ -116,7 +112,6 @@ return {
 ```
 
 A table of `require` statements where each of them will be of type `Plugin`.
-
 The specs can be very simple like for `vim-fugitive` that does not need to call a `setup()`:
 
 ```lua
