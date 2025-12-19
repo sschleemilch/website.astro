@@ -14,7 +14,7 @@
     "@astrojs/sitemap": "^3.6.0",
     "@fontsource/fira-code": "^5.2.7",
     "@fontsource/inter": "^5.2.8",
-    "@tailwindcss/vite": "^4.1.17",
+    "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.4",
     "astro-icon": "^1.1.5",
     "sharp": "^0.33.5",
