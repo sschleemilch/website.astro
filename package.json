@@ -11,19 +11,19 @@
     "format": "prettier . --write"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/sitemap": "^3.7.3",
     "@fontsource/fira-code": "^5.2.7",
     "@fontsource/inter": "^5.2.8",
-    "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.16.6",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^5.18.2",
     "astro-icon": "^1.1.5",
     "sharp": "^0.33.5",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.2.3",
     "@tailwindcss/typography": "^0.5.19",
-    "prettier": "^3.7.3",
+    "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^5.9.3"
   }

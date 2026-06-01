@@ -1,0 +1,52 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  accent: string;
+  title: string;
+}
+
+const { accent, title } = Astro.props;
+
+const socials = [
+  { name: "Email", url: "mailto:contact.sschleemilch@posteo.net", icon: "email" },
+  { name: "GitHub", url: "https://github.com/sschleemilch", icon: "github" },
+  { name: "LinkedIn", url: "https://de.linkedin.com/in/sschleemilch", icon: "linkedin" },
+];
+---
+
+<div
+  class="fixed inset-x-0 bottom-0 z-10 flex items-stretch font-mono text-sm select-none dark:bg-surface border-b dark:border-white/10"
+>
+  <!-- Mode: SCHLEEMILCH -->
+  <a
+    href="/"
+    aria-label="Home"
+    class:list={[
+      `dark:bg-${accent}`,
+      "dark:text-base",
+      "px-3 py-2 font-black tracking-widest uppercase hover:brightness-110",
+    ]}
+  >
+    SCHLEEMILCH
+  </a>
+  <span class="flex items-center px-3 py-2 dark:bg-overlay dark:text-subtle tracking-wide">
+    ~/{title}
+  </span>
+  <span class="flex-1 dark:bg-surface"></span>
+  <span class="flex items-center gap-3 px-3 py-2 dark:bg-overlay dark:text-muted text-xl">
+    {
+      socials.map((item) => (
+        <a href={item.url} aria-label={item.name} class="dark:hover:text-text dark:text-muted">
+          <Icon name={`mdi:${item.icon}`} />
+        </a>
+      ))
+    }
+  </span>
+  <a
+    href="/impressum"
+    class="flex items-center font-black px-3 py-2 dark:bg-hlm dark:text-subtle tracking-widest uppercase hover:dark:text-text"
+  >
+    LEGAL NOTICE
+  </a>
+</div>

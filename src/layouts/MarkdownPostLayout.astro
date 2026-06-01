@@ -11,7 +11,7 @@ const title = "Post";
 const accent = accents[title];
 ---
 
-<Base title={title} accent={accent}>
+<Base title={title + "/" + frontmatter.title} accent={accent}>
   <Lines>
     <Prelude>TAGS [{frontmatter.tags.join(", ")}]</Prelude>
     <Subtitle accent={accent}>{frontmatter.pubDate.toString().slice(0, 15)}</Subtitle>

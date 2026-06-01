@@ -29,7 +29,7 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 
-<Base title={title} accent={accent}>
+<Base title={title + "/" + tag} accent={accent}>
   <Lines>
     <Prelude>len(posts)=={posts.length}</Prelude>
     <Subtitle accent={accent}>{tag} BLOG POSTS</Subtitle>

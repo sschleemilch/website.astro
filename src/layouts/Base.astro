@@ -1,9 +1,7 @@
 ---
-import "@fontsource/inter";
 import "@fontsource/fira-code";
 import "../styles/global.css";
-import Header from "@components/Header.astro";
-import { Icon } from "astro-icon/components";
+import Footer from "@components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
 
 interface Props {
@@ -12,25 +10,6 @@ interface Props {
 }
 
 const { title, accent } = Astro.props;
-
-const socials = [
-  {
-    name: "Email",
-    url: "mailto: contact.sschleemilch@posteo.net",
-    icon: "email",
-    aria: "Email",
-  },
-  {
-    name: "GitHub",
-    url: "https://github.com/sschleemilch",
-    icon: "github",
-  },
-  {
-    name: "LinkedIn",
-    url: "https://de.linkedin.com/in/sschleemilch",
-    icon: "linkedin",
-  },
-];
 ---
 
 <html lang="en" class="dark dark:bg-base dark:text-text overflow-y-scroll">
@@ -47,21 +26,21 @@ const socials = [
   <body>
     <div class="isolate">
       <div class="max-w-screen overflow-x-hidden">
-        <Header accent={accent} />
+        <Footer accent={accent} title={title} />
         <div
           class:list={[
             "[--gutter-width:2.5rem]",
             "grid",
             "grid-cols-1",
-            "grid-rows-[1fr_1px_auto_1px_auto]",
+            "grid-rows-[1fr]",
             "justify-center",
             "lg:mx-0",
             "md:-mx-4",
             "md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)]",
             "min-h-dvh",
-            "pt-14.25",
           ]}
         >
+          <!-- Left gutter (diagonal pattern) -->
           <div
             class:list={[
               "bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)]",
@@ -78,9 +57,11 @@ const socials = [
             ]}
           >
           </div>
-          <div class="grid gap-24 py-24 sm:gap-40">
+          <!-- Main content -->
+          <div class="grid gap-24 pt-24 py-40 sm:gap-40">
             <slot />
           </div>
+          <!-- Right gutter (diagonal pattern) -->
           <div
             class:list={[
               "bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)]",
@@ -97,30 +78,6 @@ const socials = [
               "row-start-1",
             ]}
           >
-          </div>
-          <div class="col-start-1 row-start-5 grid md:col-start-2">
-            <div class="px-4 pb-24">
-              <div
-                class="mx-auto flex w-full flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8 px-4 md:px-6 lg:px-8"
-              >
-                <div class="flex flex-col items-center">
-                  <div class="mt-4 mb-4 flex text-2xl items-center justify-center gap-4">
-                    {
-                      socials.map((item) => (
-                        <a href={item.url} aria-label={item.name} class="dark:hover:text-text dark:text-muted">
-                          <Icon name={`mdi:${item.icon}`} />
-                        </a>
-                      ))
-                    }
-                  </div>
-                </div>
-                <div class="flex flex-col gap-4 text-sm/6 sm:flex-row sm:gap-2 sm:pr-4 dark:text-muted">
-                  <span>&copy; 2025 SEBASTIAN SCHLEEMILCH</span>
-                  <span class="max-sm:hidden">·</span>
-                  <a href="/impressum" class="underline">LEGAL NOTICE</a>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
