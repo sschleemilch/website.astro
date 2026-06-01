@@ -37,11 +37,9 @@ const { posts } = Astro.props;
       <H1> Blog </H1>
     </Lines>
     <Lines add={["mt-10"]}>
-      <div class="mx-4">
-        <div class="flex flex-nowrap gap-4">
-          <Button href="/blog/tags">Filter by tag</Button>
-          <Button href="/blog">Show all</Button>
-        </div>
+      <div class="flex flex-nowrap gap-4">
+        <Button href="/blog/tags" accent={accent}>Filter by tag</Button>
+        <Button href="/blog" accent={accent}>Show all</Button>
       </div>
     </Lines>
     <BlogPosts posts={posts} accent={accent} />

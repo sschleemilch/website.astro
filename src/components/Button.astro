@@ -1,14 +1,15 @@
 ---
 interface Props {
   href: string;
+  accent: string;
 }
 
-const { href } = Astro.props;
+const { href, accent } = Astro.props;
 ---
 
 <a
   href={href}
-  class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm/6 font-semibold text-white dark:bg-hlm dark:hover:bg-hlh"
+  class=`inline-flex items-center justify-center gap-2 px-3 py-2 text-sm/6 font-black tracking-widest uppercase text-base dark:bg-${accent} dark:hover:brightness-110`
 >
   <slot />
 </a>

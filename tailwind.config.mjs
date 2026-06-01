@@ -44,7 +44,15 @@ export default {
     },
   },
   safelist: [
-    "dark:text-foam", "dark:text-gold", "dark:text-iris", "dark:text-text",
-    "dark:bg-foam", "dark:bg-gold", "dark:bg-iris", "dark:bg-text",
+    "dark:text-foam",
+    "dark:text-gold",
+    "dark:text-iris",
+    "dark:text-text",
+    "dark:bg-foam",
+    "dark:bg-gold",
+    "dark:bg-iris",
+    "dark:bg-text",
+    "dark:text-rose",
+    "dark:bg-rose",
   ],
 };
