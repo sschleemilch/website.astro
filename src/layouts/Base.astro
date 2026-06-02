@@ -26,7 +26,6 @@ const { title, accent } = Astro.props;
   <body>
     <div class="isolate">
       <div class="max-w-screen overflow-x-hidden">
-        <Footer accent={accent} title={title} />
         <div
           class:list={[
             "[--gutter-width:2.5rem]",
@@ -61,7 +60,6 @@ const { title, accent } = Astro.props;
           <div class="grid gap-24 pt-24 pb-32 sm:gap-40 sm:pb-40">
             <slot />
           </div>
-          <!-- Right gutter (diagonal pattern) -->
           <div
             class:list={[
               "bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)]",
@@ -80,6 +78,13 @@ const { title, accent } = Astro.props;
           >
           </div>
         </div>
+      </div>
+      <div
+        class="fixed inset-x-0 bottom-0 z-10 grid grid-cols-1 justify-center border-t dark:border-white/10 md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)] md:-mx-4 lg:mx-0 [--gutter-width:2.5rem]"
+      >
+        <div class="hidden md:block"></div>
+        <Footer accent={accent} title={title} />
+        <div class="hidden md:block"></div>
       </div>
     </div>
   </body>
