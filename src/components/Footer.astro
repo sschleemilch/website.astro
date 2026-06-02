@@ -30,8 +30,8 @@ const socials = [
   <span class="hidden items-center px-3 py-2 dark:text-subtle tracking-wide sm:flex">
     ~/{title}
   </span>
-  <span class="flex-1 dark:bg-surface"></span>
-  <span class="flex items-center gap-3 px-3 py-2 dark:text-muted text-xl">
+  <span class="hidden sm:block flex-1 dark:bg-surface"></span>
+  <span class="flex items-center gap-3 px-3 py-2 dark:text-muted text-xl max-sm:flex-1 max-sm:justify-center">
     {
       socials.map((item) => (
         <a href={item.url} aria-label={item.name} class="dark:hover:text-text dark:text-muted">

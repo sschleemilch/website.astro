@@ -9,7 +9,20 @@ const { href, accent } = Astro.props;
 
 <a
   href={href}
-  class=`inline-flex items-center justify-center gap-2 px-3 py-2 text-sm/6 font-black tracking-widest uppercase text-base dark:bg-${accent} dark:hover:brightness-110`
+  class:list={[
+    "inline-flex",
+    "items-center",
+    "justify-center",
+    "gap-2",
+    "px-3",
+    "py-2",
+    "text-sm/6",
+    "font-black",
+    "uppercase",
+    "text-base",
+    `dark:bg-${accent}`,
+    "dark:hover:brightness-110",
+  ]}
 >
   <slot />
 </a>
