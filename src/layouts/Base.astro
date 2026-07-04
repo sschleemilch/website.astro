@@ -1,6 +1,7 @@
 ---
 import "@fontsource/fira-code";
 import "../styles/global.css";
+import Lines from "@components/Lines.astro";
 import Footer from "@components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
 
@@ -83,7 +84,9 @@ const { title, accent } = Astro.props;
         class="fixed inset-x-0 bottom-0 z-10 grid grid-cols-1 justify-center border-t dark:border-white/10 md:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)] md:-mx-4 lg:mx-0 [--gutter-width:2.5rem]"
       >
         <div class="hidden md:block"></div>
-        <Footer accent={accent} title={title} />
+        <Lines before={false}>
+          <Footer accent={accent} title={title} />
+        </Lines>
         <div class="hidden md:block"></div>
       </div>
     </div>
