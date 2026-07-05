@@ -15,15 +15,11 @@ const socials = [
 ];
 ---
 
-<div class="flex items-stretch font-mono text-sm select-none dark:bg-surface">
+<div class="flex items-stretch font-pixel text-sm select-none dark:bg-surface">
   <a
     href="/"
     aria-label="Home"
-    class:list={[
-      `dark:bg-${accent}`,
-      "dark:text-base",
-      "px-3 py-2 font-black tracking-widest uppercase hover:brightness-110",
-    ]}
+    class:list={[`dark:bg-${accent}`, "dark:text-base", "text-xl px-3 py-1 font-black uppercase hover:brightness-110"]}
   >
     S
   </a>
@@ -31,7 +27,7 @@ const socials = [
     ~/{title}
   </span>
   <span class="hidden sm:block flex-1 dark:bg-surface"></span>
-  <span class="flex items-center gap-3 px-3 py-2 dark:text-muted text-xl max-sm:flex-1 max-sm:justify-center">
+  <span class="flex items-center gap-3 px-3 py-2 dark:text-muted text-xl max-sm:flex-1">
     {
       socials.map((item) => (
         <a href={item.url} aria-label={item.name} class="dark:hover:text-text dark:text-muted">
@@ -42,7 +38,7 @@ const socials = [
   </span>
   <a
     href="/impressum"
-    class="flex items-center font-black px-3 py-2 dark:bg-hlm dark:text-subtle tracking-widest uppercase hover:dark:text-text"
+    class="flex items-center font-black px-3 py-2 dark:bg-hlm dark:text-subtle uppercase hover:dark:text-text"
   >
     LEGAL NOTICE
   </a>

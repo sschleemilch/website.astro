@@ -3,6 +3,7 @@ import "@fontsource/fira-code";
 import "../styles/global.css";
 import Lines from "@components/Lines.astro";
 import Footer from "@components/Footer.astro";
+import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 
 interface Props {
@@ -15,6 +16,7 @@ const { title, accent } = Astro.props;
 
 <html lang="en" class="dark dark:bg-base dark:text-text overflow-y-scroll">
   <head>
+    <Font cssVariable="--font-pixel" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="title" content={`Schleemilch | ${title}`} />

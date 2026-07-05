@@ -4,9 +4,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
+@theme inline {
   --font-sans: "Fira Code", monospace;
   --font-mono: "Fira Code", monospace;
+  --font-pixel: var(--font-pixel);
 }
 
 html.dark .astro-code,

@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
@@ -9,6 +9,22 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://sebastian-schleemilch.de",
+  fonts: [
+    {
+      provider: fontProviders.local(),
+      name: "Elektron",
+      cssVariable: "--font-pixel",
+      options: {
+        variants: [
+          {
+            src: ["./src/assets/fonts/elektron.ttf"],
+            weight: "normal",
+            style: "normal",
+          },
+        ],
+      },
+    },
+  ],
   markdown: {
     shikiConfig: {
       // Alternatively, provide multiple themes

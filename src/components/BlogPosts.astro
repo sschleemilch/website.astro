@@ -1,6 +1,7 @@
 ---
 import Lines from "@components/Lines.astro";
 import type { CollectionEntry } from "astro:content";
+import Button from "@components/Button.astro";
 interface Props {
   posts: CollectionEntry<"posts">[];
   accent: string;
@@ -25,20 +26,10 @@ const { posts, accent } = Astro.props;
               <a class="font-semibold" href={`/blog/posts/${post.id}/`}>
                 {post.data.title}
               </a>
-              <div class="mt-4 line-clamp-3 leading-7 dark:text-subtle">{post.data.description}</div>
-              <a
-                class:list={[
-                  "mt-4",
-                  "inline-block",
-                  "text-sm",
-                  "font-semibold",
-                  `dark:text-${accent}`,
-                  "dark:hover:text-text",
-                ]}
-                href={`/blog/posts/${post.id}/`}
-              >
+              <div class="my-4 line-clamp-3 leading-7 dark:text-subtle">{post.data.description}</div>
+              <Button href={`/blog/posts/${post.id}/`} accent={accent}>
                 Read more
-              </a>
+              </Button>
             </div>
           </div>
         </Lines>
