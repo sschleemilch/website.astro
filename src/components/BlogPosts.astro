@@ -14,11 +14,11 @@ const { posts, accent } = Astro.props;
     posts.map((post, index) => (
       <>
         <Lines add={["p", "col-span-3", "grid", "grid-cols-subgrid", "divide-x", "dark:divide-white/10"]}>
-          <div class="px-4 font-mono text-sm/6 font-medium tracking-widest dark:text-subtle uppercase max-lg:hidden">
+          <div class="px-4 font-pixel text-sm/6 font-medium tracking-widest dark:text-subtle uppercase max-lg:hidden">
             {post.data.pubDate.toString().slice(0, 15)}
           </div>
           <div class="max-lg:hidden" />
-          <div class="text-md px-4">
+          <div class="text-md px-4 py-2">
             <div class="max-w-(--container-2xl)">
               <div class="mb-4 font-mono text-sm/6 font-medium tracking-widest dark:text-subtle uppercase lg:hidden">
                 {post.data.pubDate.toString().slice(0, 15)}
@@ -28,7 +28,7 @@ const { posts, accent } = Astro.props;
               </a>
               <div class="my-4 line-clamp-3 leading-7 dark:text-subtle">{post.data.description}</div>
               <Button href={`/blog/posts/${post.id}/`} accent={accent}>
-                Read more
+                Read
               </Button>
             </div>
           </div>
