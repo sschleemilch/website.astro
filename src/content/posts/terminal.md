@@ -102,4 +102,79 @@ environment variables and completion support (using `<tab>` to complete a path, 
 Do actually do something useful you are launching applications.
 While there are some shell built in commands, most of the programs you launch are external programs like `git`, `ssh` and so on.
 
+## Organizing your workspace
+
+Usually you want to do several things in parallel when working. Starting a service, editing a file, running tests, ....
+Of course, you could start multiple terminal emulators to do so. However, one is definitely enough.
+
+Modern terminal emulators often have native support for tabs and splits.
+On top of this there exist so-called **terminal multiplexers**.
+
+The most popular ones are [zellij](https://zellij.dev/) and [tmux](https://github.com/tmux/tmux/wiki).
+The benefit of emulator independent multiplexers is obviously that you have to learn them once and can then
+switch the terminal multiplexer anytime. Also, not all terminal emulators implement sessions.
+
+I have been using `tmux` for a long time until I settled down using `kitty`'s native tabs and splits but emulating
+the `tmux` key bindings. My current bindings are like that
+
+```conf
+map ctrl+shift+h previous_tab
+map ctrl+shift+l next_tab
+
+map ctrl+j neighboring_window bottom
+map ctrl+k neighboring_window top
+map ctrl+h neighboring_window left
+map ctrl+l neighboring_window right
+
+map ctrl+b>1 goto_tab 1
+map ctrl+b>2 goto_tab 2
+map ctrl+b>3 goto_tab 3
+map ctrl+b>4 goto_tab 4
+map ctrl+b>5 goto_tab 5
+map ctrl+b>6 goto_tab 6
+map ctrl+b>7 goto_tab 7
+map ctrl+b>8 goto_tab 8
+map ctrl+b>9 goto_tab 9
+
+map ctrl+b>c new_tab
+map ctrl+b>, set_tab_title
+
+map ctrl+b>% launch --location=vsplit --cwd=current
+map ctrl+b>" launch --location=hsplit --cwd=current
+```
+
+Everyone has to find their sweet spot of bindings.
+However, I have learned that trying to stick with default bindings can have its benefits as well.
+Be it a foreign machine, a remote session or helping out a colleague.
+
+## Efficient navigation
+
+A lot of the tasks in the terminal require navigating to places.
+The ground rule for everything you type in the terminal is to use the `<tab>` key whenever possible.
+
+E.g. to navigate into my website to write a new article like this one I can do from `cd w<tab>` which expands already
+into `cd workspace/` followed by `web<tab>` will expand to my final target `workspace/website.astro`.
+
+Some shells offer **auto suggestions** either via plugins or natively that even reduce the needed keystrokes further.
+They have an internal ranking of how often you are navigating into directories.
+In my case it already suggests the target after one letter, which I can accept using **right arrow**:
+
+![auto_suggestion](./img/terminal/auto_suggestion.png)
+
+Additionally, there exist shell independent tools to find directories you use frequently in a fuzzy manner.
+The one I am using is [zoxide](https://github.com/ajeetdsouza/zoxide).
+
+It offers two commands: `z` and `zi`. `z` will directly navigate into the best match for its argument.
+`zi` will open an interactive window where you can select the prefiltered target list.
+
+Therefore, `z web` also brings me into my `workspace/website.astro` project.
+Usually I am using `zi` though when I am not sure that the argument will only have one result.
+
+In this case, it does and I can navigate using `enter`:
+
+![zi](./img/terminal/zi.png)
+
+This is really a tool made in heaven, especially at work where you have a lot of repositories.
+A simple keyword is enough to find the right target using `zi` in seconds!
+
 
