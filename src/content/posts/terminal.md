@@ -271,3 +271,7 @@ Between tab completion, shell history, fzf, aliases and modern shell suggestions
 
 Once navigation, editing, version control, and project management all happen in the same environment,
 the terminal stops feeling like a collection of commands and starts feeling like a workspace.
+
+And also kind of beautiful:
+
+![composition](./img/terminal/composition.png)
