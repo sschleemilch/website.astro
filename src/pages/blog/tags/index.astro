@@ -6,9 +6,10 @@ import Prelude from "@components/Prelude.astro";
 import Button from "@components/Button.astro";
 import Subtitle from "@components/Subtitle.astro";
 import H1 from "@components/H1.astro";
+import { getTags } from "@lib/posts";
 
 const posts = await getCollection("posts");
-const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
+const tags = getTags(posts);
 const tagCounts = tags.reduce((acc, tag) => {
   acc[tag] = posts.filter((post) => post.data.tags.includes(tag)).length;
   return acc;

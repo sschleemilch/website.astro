@@ -7,10 +7,11 @@ import H1 from "@components/H1.astro";
 import Subtitle from "@components/Subtitle.astro";
 import Button from "@components/Button.astro";
 import Prelude from "@components/Prelude.astro";
+import { sortPosts } from "@lib/posts";
 
 import accents from "@config/accents.json";
 
-const posts = (await getCollection("posts")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = sortPosts(await getCollection("posts"));
 
 const title = "Blog";
 const accent = accents[title];
