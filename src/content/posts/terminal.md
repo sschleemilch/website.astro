@@ -3,6 +3,7 @@ title: Living in the terminal
 pubDate: 2026-07-09
 tags:
   - TERMINAL
+  - TOOLS
 description: Introduction of the terminal, tools and workflows
 ---
 
