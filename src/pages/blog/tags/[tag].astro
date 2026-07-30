@@ -7,17 +7,18 @@ import Lines from "@components/Lines.astro";
 import Subtitle from "@components/Subtitle.astro";
 import Prelude from "@components/Prelude.astro";
 import Button from "@components/Button.astro";
+import { filterPosts, getTags } from "@lib/posts";
 
 import accents from "@config/accents.json";
 const title = "Tags";
 const accent = accents[title];
 
 export async function getStaticPaths() {
-  const allPosts = (await getCollection("posts")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-  const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+  const allPosts = await getCollection("posts");
+  const uniqueTags = getTags(allPosts);
 
   return uniqueTags.map((tag: string) => {
-    const filteredPosts = allPosts.filter((post) => post.data.tags.includes(tag));
+    const filteredPosts = filterPosts(allPosts, undefined, tag);
     return {
       params: { tag },
       props: { posts: filteredPosts },
