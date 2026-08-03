@@ -142,7 +142,7 @@ end
 Also adapt the statusline content call accordingly:
 
 ```lua
-vim.o.statusline = "%!v:lua.require'statusline'.get_mode()"
+vim.o.statusline = "%!v:lua.require'statusline'.render()"
 ```
 
 ## File and path
