@@ -7,7 +7,7 @@ interface Props {
 
 const { after = true, before = true, add = [] } = Astro.props;
 
-let classes = ["relative"].concat(add);
+let classes = ["relative", "min-w-0"].concat(add);
 
 if (after) {
   classes = classes.concat([
