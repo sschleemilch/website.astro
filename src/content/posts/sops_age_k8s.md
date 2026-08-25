@@ -181,21 +181,6 @@ Let's first write `decrypt.sh`:
 ```bash
 #!/usr/bin/env bash
 
-set -euo pipefail
-
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR"
-
-if ! command -v sops >/dev/null 2>&1; then
-  echo "Error: 'sops' is not installed or not in PATH." >&2
-  exit 1
-fi
-
-if [[ -z "${SOPS_AGE_KEY_FILE:-}" ]]; then
-  echo "Error: SOPS_AGE_KEY_FILE environment variable is not set." >&2
-  exit 1
-fi
-
 mapfile -d '' -t files < <(find . -type d -name .git -prune -o -type f -name '*secret.enc.yaml' -print0)
 
 if [[ ${#files[@]} -eq 0 ]]; then
@@ -220,19 +205,7 @@ We then decrypt them with `sops`.
 Now the `encrypt.sh`:
 
 ```bash
- #!/usr/bin/env bash
-
-set -euo pipefail
-
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR"
-
-if ! command -v sops >/dev/null 2>&1; then
-  echo "Error: 'sops' is not installed or not in PATH." >&2
-  exit 1
-fi
-
-files=()
+#!/usr/bin/env bash
 
 mapfile -d '' -t files < <(find . -type d -name .git -prune -o -type f -name '*secret.dec.yaml' -print0)
 
@@ -295,16 +268,6 @@ script to update all files with the new recipient added:
 
 ```bash
 #!/usr/bin/env bash
-
-set -euo pipefail
-
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR"
-
-if ! command -v sops >/dev/null 2>&1; then
-  echo "Error: 'sops' is not installed or not in PATH." >&2
-  exit 1
-fi
 
 mapfile -d '' -t files < <(find . -type d -name .git -prune -o -type f -name '*secret.enc.yaml' -print0)
 
