@@ -222,9 +222,9 @@ skipped_count=0
 
 sha() {
     if command -v sha256sum >/dev/null 2>&1; then
-        sha256sum -- "$1" | awk '{print $1}'
+        yq "$1" | sha256sum | awk '{print $1}'
     else
-        shasum -a 256 -- "$1" | awk '{print $1}'
+        yq "$1" | shasum -a 256 | awk '{print $1}'
     fi
 }
 
@@ -305,6 +305,7 @@ repos:
         entry: ./encrypt.sh
         language: system
         always_run: true
+        pass_filenames: false
         stages:
           - pre-commit
 
@@ -313,6 +314,7 @@ repos:
         entry: ./decrypt.sh
         language: system
         always_run: true
+        pass_filenames: false
         stages:
           - post-checkout
           - post-merge
